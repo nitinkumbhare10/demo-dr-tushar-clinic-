@@ -4502,3 +4502,223 @@ nav[aria-label="Main Navigation"] {
 .fancy-submit-btn:hover .btn-arrow {
   transform: translateX(5px) !important;
 }
+
+/* ==========================================================================
+   FANCY DOCTOR CONCIERGE CARD (ABOUT SECTION)
+   ========================================================================== */
+
+.doctor-bio-box.fancy-doctor-card {
+  background: #FFFFFF !important;
+  border: 1.5px solid #E5E0D6 !important;
+  border-left: 5px solid #0D9488 !important;
+  border-radius: 20px !important;
+  padding: 1.6rem 1.75rem !important;
+  box-shadow: 0 10px 30px -10px rgba(13, 148, 136, 0.12), 0 4px 16px rgba(45, 42, 36, 0.04) !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 1.5rem !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  margin-top: 1.75rem !important;
+  position: relative !important;
+}
+
+.doctor-bio-box.fancy-doctor-card:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 16px 36px -12px rgba(13, 148, 136, 0.18), 0 6px 20px rgba(45, 42, 36, 0.06) !important;
+  border-color: #0D9488 !important;
+}
+
+.doctor-avatar-wrap {
+  position: relative !important;
+  flex-shrink: 0 !important;
+}
+
+.fancy-doctor-card .doctor-bio-avatar {
+  width: 82px !important;
+  height: 82px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  object-position: center 20% !important;
+  padding: 3px !important;
+  background: linear-gradient(135deg, #0D9488, #F5D76E) !important;
+  border: 2px solid #FFFFFF !important;
+  box-shadow: 0 6px 16px rgba(13, 148, 136, 0.2) !important;
+}
+
+.doctor-online-badge {
+  position: absolute !important;
+  bottom: 4px !important;
+  right: 4px !important;
+  width: 18px !important;
+  height: 18px !important;
+  background: #10B981 !important;
+  border: 2.5px solid #FFFFFF !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.doctor-online-badge .dot-pulse {
+  width: 6px !important;
+  height: 6px !important;
+  background: #FFFFFF !important;
+  border-radius: 50% !important;
+}
+
+.doctor-bio-details {
+  flex: 1 !important;
+  min-width: 0 !important;
+}
+
+.doctor-name-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  flex-wrap: wrap !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.doctor-card-name {
+  font-family: 'Newsreader', Georgia, serif !important;
+  font-size: 1.35rem !important;
+  font-weight: 700 !important;
+  color: #2D2A24 !important;
+  margin: 0 !important;
+  line-height: 1.2 !important;
+}
+
+.doctor-verified-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+  background: rgba(13, 148, 136, 0.1) !important;
+  color: #0D9488 !important;
+  padding: 0.2rem 0.6rem !important;
+  border-radius: 9999px !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.doctor-card-creds {
+  font-size: 0.88rem !important;
+  color: #6B6558 !important;
+  margin: 0 0 0.45rem 0 !important;
+  line-height: 1.45 !important;
+}
+
+.doctor-card-experience {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.45rem !important;
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  color: #3D3A34 !important;
+  background: #F5F3EE !important;
+  border: 1px solid #E5E0D6 !important;
+  padding: 0.25rem 0.65rem !important;
+  border-radius: 6px !important;
+  margin-bottom: 0.85rem !important;
+}
+
+.doctor-card-experience i {
+  color: #0D9488 !important;
+}
+
+.doctor-card-action {
+  margin-top: 0.25rem !important;
+}
+
+.doctor-whatsapp-cta {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.85rem !important;
+  background: #F0FDF4 !important;
+  border: 1.5px solid #BBF7D0 !important;
+  padding: 0.65rem 1.15rem !important;
+  border-radius: 12px !important;
+  text-decoration: none !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  width: 100% !important;
+}
+
+.doctor-whatsapp-cta:hover {
+  background: #25D366 !important;
+  border-color: #25D366 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.3) !important;
+}
+
+.wa-icon-circle {
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 50% !important;
+  background: #25D366 !important;
+  color: #FFFFFF !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1.25rem !important;
+  flex-shrink: 0 !important;
+  transition: all 0.25s ease !important;
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.35) !important;
+}
+
+.doctor-whatsapp-cta:hover .wa-icon-circle {
+  background: #FFFFFF !important;
+  color: #25D366 !important;
+}
+
+.wa-cta-info {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 !important;
+}
+
+.wa-cta-main {
+  font-size: 0.92rem !important;
+  font-weight: 700 !important;
+  color: #166534 !important;
+  line-height: 1.3 !important;
+  transition: color 0.25s ease !important;
+}
+
+.wa-cta-sub {
+  font-size: 0.78rem !important;
+  color: #15803D !important;
+  line-height: 1.2 !important;
+  transition: color 0.25s ease !important;
+}
+
+.doctor-whatsapp-cta:hover .wa-cta-main,
+.doctor-whatsapp-cta:hover .wa-cta-sub {
+  color: #FFFFFF !important;
+}
+
+.wa-cta-arrow {
+  color: #166534 !important;
+  font-size: 0.95rem !important;
+  transition: transform 0.25s ease, color 0.25s ease !important;
+  margin-left: auto !important;
+}
+
+.doctor-whatsapp-cta:hover .wa-cta-arrow {
+  color: #FFFFFF !important;
+  transform: translateX(4px) !important;
+}
+
+@media (max-width: 640px) {
+  .doctor-bio-box.fancy-doctor-card {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 1.4rem 1.2rem !important;
+  }
+  .doctor-name-row {
+    justify-content: center !important;
+  }
+  .doctor-whatsapp-cta {
+    text-align: left !important;
+  }
+}
