@@ -33,27 +33,24 @@
 </head>
 <body>
 
-  <!-- TOP BAR -->
+    <!-- TOP BAR (CLEAN, UNCLUTTERED, CALL & WHATSAPP ON LEFT) -->
   <aside class="topbar" aria-label="Quick Contact and Live Timings">
     <div class="container topbar-container">
       <div class="topbar-left">
+        <a href="tel:9309592373" class="topbar-quick-btn topbar-call-btn" title="Call Clinic">
+          <i class="fas fa-phone-alt"></i> <span>Call: 9309592373</span>
+        </a>
+        <a href="https://wa.me/919309592373?text=Hello%20Dr.%20Tushar%20Chandak%20Family%20Dental%20Care" target="_blank" class="topbar-quick-btn topbar-whatsapp-btn" title="WhatsApp Us">
+          <i class="fab fa-whatsapp"></i> <span>WhatsApp Us</span>
+        </a>
         <span class="topbar-item topbar-pill pill-open" id="liveStatusPill">
-          <span class="dot-pulse"></span> Checking Clinic Status...
-        </span>
-        <span class="topbar-item topbar-location">
-          <i class="fas fa-map-marker-alt"></i> Krida Chowk, Hanuman Nagar, Nagpur
+          <span class="dot-pulse"></span> Open Today
         </span>
         <span class="topbar-item topbar-hours">
-          <i class="fas fa-clock"></i> Mon - Fri: 9:30 AM - 7:30 PM | Sat: 10:00 AM - 8:00 PM
+          <i class="fas fa-clock"></i> Mon - Sat: 9:30 AM - 7:30 PM
         </span>
       </div>
       <div class="topbar-right">
-        <button onclick="openCallChooser()" class="topbar-item topbar-phone" style="background:none; border:none; cursor:pointer;" title="Choose Phone Line">
-          <i class="fas fa-phone-alt"></i> +91 9309592373
-        </button>
-        <a href="mailto:drtusharchandak@gmail.com" class="topbar-item topbar-email" title="Email Clinic">
-          <i class="fas fa-envelope"></i> drtusharchandak@gmail.com
-        </a>
         <button class="topbar-admin-btn" id="adminPortalBtn" title="Clinic Staff Portal (PIN Protected)">
           <i class="fas fa-user-lock"></i> Staff Dashboard
         </button>
@@ -61,9 +58,9 @@
     </div>
   </aside>
 
-  <!-- MAIN NAVIGATION BAR (ALIGNED & SPACIOUS) -->
+  <!-- MAIN NAVIGATION BAR (AIRY, UNCLUTTERED & EDITORIAL) -->
   <header class="navbar" id="mainHeader">
-    <div class="container">
+    <div class="container navbar-container">
       
       <!-- Clinic Brand -->
       <a href="#home" class="brand-logo">
@@ -71,17 +68,16 @@
           <i class="fas fa-tooth"></i>
         </div>
         <div class="brand-text">
-          <h1>Dr Tushar Chandak Family Dental Care</h1>
-          <span>Periodontist & Family Dental Care • Nagpur</span>
+          <h1>Dr Tushar Chandak</h1>
+          <span>Family Dental Care • Nagpur</span>
         </div>
       </a>
 
-      <!-- Desktop Nav Menu -->
+      <!-- Desktop Nav Menu (Centered & Spacious) -->
       <nav aria-label="Main Navigation">
         <ul class="nav-menu" id="navMenu">
-          <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
-          <li class="nav-item"><a href="#about" class="nav-link">About Us</a></li>
-          <li class="nav-item"><a href="#services" class="nav-link">Our Services</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
           <li class="nav-item"><a href="#why-us" class="nav-link">Why Choose Us</a></li>
           <li class="nav-item"><a href="#gallery" class="nav-link">Smile Gallery</a></li>
           <li class="nav-item"><a href="#reviews" class="nav-link">Reviews</a></li>
@@ -89,14 +85,10 @@
         </ul>
       </nav>
 
-      <!-- Nav CTA & Phone -->
+      <!-- Nav CTA (Single Clean Primary Button) -->
       <div class="nav-actions">
-        <button onclick="openCallChooser()" class="nav-phone-chip" title="Call Clinic Numbers">
-          <i class="fas fa-phone-volume"></i>
-          <span>9309592373</span>
-        </button>
-        <a href="#appointment" class="btn btn-primary">
-          <i class="fas fa-calendar-check"></i> Book Appointment
+        <a href="#appointment" class="btn btn-primary nav-cta-btn">
+          <i class="fas fa-calendar-check"></i> <span>Book Appointment</span>
         </a>
         <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation Menu">
           <i class="fas fa-bars"></i>
