@@ -3952,15 +3952,14 @@ nav[aria-label="Main Navigation"] {
 
 /* Footer Bottom Bar */
 .footer-bottom {
-  padding: 1.75rem 0 !important;
+  padding: 1.6rem 0 !important;
   border-top: 1.5px solid #E2DCD1 !important;
   font-size: 0.86rem !important;
   color: #78716C !important;
   display: flex !important;
-  justify-content: space-between !important;
+  justify-content: center !important;
   align-items: center !important;
-  flex-wrap: wrap !important;
-  gap: 1.25rem !important;
+  text-align: center !important;
   max-width: 1360px !important;
   margin: 0 auto !important;
 }
@@ -3968,31 +3967,11 @@ nav[aria-label="Main Navigation"] {
 .footer-copy {
   margin: 0 !important;
   color: #6B6558 !important;
+  text-align: center !important;
 }
 
 .footer-copy strong {
   color: #2D2A24 !important;
-}
-
-.footer-bottom-links {
-  display: flex !important;
-  align-items: center !important;
-  gap: 0.75rem !important;
-}
-
-.footer-bottom-links a {
-  color: #6B6558 !important;
-  text-decoration: none !important;
-  font-weight: 500 !important;
-  transition: color 0.2s ease !important;
-}
-
-.footer-bottom-links a:hover {
-  color: #0D9488 !important;
-}
-
-.footer-bottom-links span {
-  color: #B5AFA4 !important;
 }
 
 /* ==========================================================================
