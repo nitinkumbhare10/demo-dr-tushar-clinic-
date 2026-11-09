@@ -3757,3 +3757,76 @@ nav[aria-label="Main Navigation"] {
   border-top: 1px solid #E5E0D6 !important;
   font-weight: 500 !important;
 }
+
+
+
+/* ==========================================================================
+   BOOKING PANE LIGHT THEME OVERRIDES (NO DARK PANE)
+   ========================================================================== */
+
+.booking-info-pane {
+  background: #F0EDE6 !important;
+  color: #3D3A34 !important;
+  padding: 3.5rem 2.75rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  border-right: 1.5px solid #E5E0D6 !important;
+}
+
+.booking-info-pane h3 {
+  color: #2D2A24 !important;
+  font-family: 'Newsreader', Georgia, serif !important;
+  font-size: 2.3rem !important;
+  font-weight: 600 !important;
+  line-height: 1.15 !important;
+  margin-bottom: 1rem !important;
+  letter-spacing: -0.015em !important;
+}
+
+.booking-info-pane p {
+  color: #6B6558 !important;
+  font-size: 0.98rem !important;
+  line-height: 1.65 !important;
+  margin-bottom: 2rem !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+}
+
+.booking-perks {
+  list-style: none !important;
+  margin-bottom: 2.5rem !important;
+}
+
+.booking-perks li {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.85rem !important;
+  font-size: 0.95rem !important;
+  color: #3D3A34 !important;
+  font-weight: 600 !important;
+  margin-bottom: 1rem !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+}
+
+.booking-perks li i {
+  color: #0D9488 !important;
+  font-size: 1.15rem !important;
+}
+
+.booking-contact-direct {
+  background: #FFFFFF !important;
+  padding: 1.25rem 1.4rem !important;
+  border-radius: var(--radius-md) !important;
+  border: 1px solid #E5E0D6 !important;
+  box-shadow: 0 4px 14px rgba(61, 58, 52, 0.05) !important;
+}
+
+.booking-contact-direct h5 {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  color: #6B6558 !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  margin-bottom: 0.45rem !important;
+}
