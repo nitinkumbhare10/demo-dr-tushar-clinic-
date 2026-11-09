@@ -1204,70 +1204,76 @@ button, input, select, textarea {
   box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35);
 }
 
-/* ---------------- STATS COUNTER SECTION (UI-14) ---------------- */
+/* ---------------- STATS COUNTER SECTION (VIBRANT WARM LIGHT THEME) ---------------- */
 .stats-banner {
-  background: linear-gradient(135deg, var(--secondary) 0%, #061320 100%);
-  color: #fff;
-  padding: 5rem 0;
-  position: relative;
-  overflow: hidden;
+  background: #F0EDE6 !important;
+  color: #3D3A34 !important;
+  padding: 5rem 0 !important;
+  position: relative !important;
+  overflow: hidden !important;
+  border-top: 1px solid #E5E0D6 !important;
+  border-bottom: 1px solid #E5E0D6 !important;
 }
 
 .stats-banner::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at 70% 30%, rgba(0, 157, 148, 0.28) 0%, transparent 60%);
-  pointer-events: none;
+  display: none !important;
 }
 
 .stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  text-align: center;
-  position: relative;
-  z-index: 2;
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 2rem !important;
+  text-align: center !important;
+  position: relative !important;
+  z-index: 2 !important;
 }
 
 .stat-box {
-  padding: 2.2rem 1.5rem;
-  border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(6px);
-  transition: var(--transition);
+  padding: 2.2rem 1.6rem !important;
+  border-radius: 1.25rem !important;
+  background: #FFFFFF !important;
+  border: 1.5px solid #E5E0D6 !important;
+  box-shadow: 0 10px 30px rgba(61, 58, 52, 0.06) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .stat-box:hover {
-  transform: translateY(-6px);
-  background: rgba(255, 255, 255, 0.08);
-  border-color: var(--primary);
-  box-shadow: 0 10px 25px rgba(0, 157, 148, 0.2);
+  transform: translateY(-6px) !important;
+  background: #FFFFFF !important;
+  border-color: #0D9488 !important;
+  box-shadow: 0 18px 40px rgba(61, 58, 52, 0.12) !important;
 }
 
 .stat-box-icon {
-  font-size: 2.4rem;
-  color: var(--accent);
-  margin-bottom: 1rem;
+  font-size: 2.4rem !important;
+  color: #F59E0B !important;
+  margin-bottom: 0.85rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .stat-number {
-  font-size: 3rem;
-  font-weight: 800;
-  color: #ffffff;
-  font-family: 'Outfit', sans-serif;
-  line-height: 1;
-  margin-bottom: 0.5rem;
+  font-size: clamp(2.4rem, 3.2vw, 3rem) !important;
+  font-weight: 800 !important;
+  color: #0D9488 !important;
+  font-family: 'Newsreader', Georgia, serif !important;
+  line-height: 1.1 !important;
+  margin-bottom: 0.5rem !important;
+  letter-spacing: -0.02em !important;
 }
 
 .stat-label {
-  font-size: 0.95rem;
-  color: #94a3b8;
-  font-weight: 500;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.95rem !important;
+  color: #4A463D !important;
+  font-weight: 600 !important;
+  line-height: 1.35 !important;
+  margin: 0 !important;
 }
 
 /* ---------------- REVIEWS & TESTIMONIALS (UI-6) ---------------- */
