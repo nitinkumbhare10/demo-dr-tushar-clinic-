@@ -1235,126 +1235,171 @@
         </p>
       </div>
 
-      <div class="booking-wrapper" data-aos="fade-up" data-aos-duration="850">
-        <!-- Left Info Pane -->
+            <div class="booking-wrapper" data-aos="fade-up" data-aos-duration="850">
+        <!-- Left Luxury Info Pane -->
         <div class="booking-info-pane">
           <div>
-            <h3>Schedule Your Visit</h3>
-            <p>
-              Experience hassle-free, zero-wait dental appointments. Once submitted, your appointment is logged immediately and a pre-filled confirmation is prepared for instant WhatsApp coordination.
+            <div class="booking-trust-pill">
+              <i class="fas fa-certificate"></i>
+              <span>Priority Doctor Reservation</span>
+            </div>
+
+            <h3 class="booking-pane-title">Schedule Your Visit</h3>
+            <p class="booking-pane-desc">
+              Experience seamless, zero-wait dental consultations. Reserve your preferred slot online with <strong>Dr. Tushar Chandak</strong> for gentle, comprehensive care.
             </p>
 
-            <ul class="booking-perks">
-              <li><i class="fas fa-check-circle"></i> Instant WhatsApp Booking Confirmation</li>
-              <li><i class="fas fa-check-circle"></i> Flexible Morning, Afternoon & Evening Slots</li>
-              <li><i class="fas fa-check-circle"></i> Thorough Initial Dental Diagnosis</li>
-              <li><i class="fas fa-check-circle"></i> Priority Emergency Treatment</li>
-            </ul>
+            <div class="fancy-booking-steps">
+              <div class="fancy-step-item">
+                <div class="fancy-step-num">1</div>
+                <div class="fancy-step-content">
+                  <h6>Choose Convenient Slot</h6>
+                  <p>Flexible Morning, Afternoon & Evening timings</p>
+                </div>
+              </div>
+              <div class="fancy-step-item">
+                <div class="fancy-step-num">2</div>
+                <div class="fancy-step-content">
+                  <h6>Instant WhatsApp Confirmation</h6>
+                  <p>Receive live confirmation slip on your mobile</p>
+                </div>
+              </div>
+              <div class="fancy-step-item">
+                <div class="fancy-step-num">3</div>
+                <div class="fancy-step-content">
+                  <h6>Zero-Wait Hospital Diagnosis</h6>
+                  <p>Comprehensive examination with Dr. Chandak</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="booking-contact-direct">
             <h5>Prefer Direct Call?</h5>
-            <a href="tel:+919309592373" style="display:inline-flex; align-items:center; gap:0.6rem; color:#0D9488; font-size:1.15rem; font-weight:700; text-decoration:none;">
-              <i class="fas fa-phone-alt"></i> +91 9309592373
+            <a href="tel:+919309592373" class="direct-call-link">
+              <div class="call-pulse-dot"></div>
+              <span><i class="fas fa-phone-alt"></i> +91 9309592373</span>
             </a>
           </div>
         </div>
 
-        <!-- Right Form Pane (Enhanced Inline Validation) -->
+        <!-- Right Fancy Form Pane -->
         <div class="booking-form-pane">
+          <div class="form-header-badge">
+            <span class="step-tag"><i class="fas fa-calendar-check"></i> Patient Appointment Form</span>
+            <span class="live-tag"><span class="dot-pulse"></span> Booking Slots Available</span>
+          </div>
+
           <form id="appointmentForm" novalidate>
             <div class="form-grid">
               
               <!-- Patient Name -->
               <div class="form-group">
                 <label class="form-label" for="bookingName">
-                  Patient Full Name <span class="req-star">*</span>
+                  <span>Patient Full Name <span class="req-star">*</span></span>
                 </label>
-                <input type="text" id="bookingName" class="form-control" placeholder="e.g. Ramesh Kumar" required autocomplete="name">
+                <div class="input-icon-wrap">
+                  <i class="fas fa-user input-icon"></i>
+                  <input type="text" id="bookingName" class="form-control fancy-control" placeholder="e.g. Ramesh Kumar" required autocomplete="name">
+                </div>
                 <span class="field-error-msg" id="nameError"></span>
               </div>
 
               <!-- Phone Number -->
               <div class="form-group">
                 <label class="form-label" for="bookingPhone">
-                  Contact Phone Number <span class="req-star">*</span>
+                  <span>Contact Phone Number <span class="req-star">*</span></span>
                 </label>
-                <input type="tel" id="bookingPhone" class="form-control" placeholder="e.g. 9876543210" required autocomplete="tel">
+                <div class="input-icon-wrap">
+                  <i class="fas fa-phone-alt input-icon"></i>
+                  <input type="tel" id="bookingPhone" class="form-control fancy-control" placeholder="e.g. 9876543210" required autocomplete="tel">
+                </div>
                 <span class="field-error-msg" id="phoneError"></span>
               </div>
 
-              <!-- Email -->
+              <!-- Email Address -->
               <div class="form-group">
-                <label class="form-label" for="bookingEmail">Email Address (Optional)</label>
-                <input type="email" id="bookingEmail" class="form-control" placeholder="name@example.com" autocomplete="email">
+                <label class="form-label" for="bookingEmail">
+                  <span>Email Address <span class="opt-label">(Optional)</span></span>
+                </label>
+                <div class="input-icon-wrap">
+                  <i class="fas fa-envelope input-icon"></i>
+                  <input type="email" id="bookingEmail" class="form-control fancy-control" placeholder="name@example.com" autocomplete="email">
+                </div>
               </div>
 
-              <!-- Service Required (Optional) -->
+              <!-- Select Dental Treatment -->
               <div class="form-group">
                 <label class="form-label" for="bookingService">
-                  Select Dental Treatment <span style="font-weight: 400; color: var(--text-muted); font-size: 0.8rem; margin-left: 0.35rem;">(Optional)</span>
+                  <span>Select Dental Treatment <span class="opt-label">(Optional)</span></span>
                 </label>
-                <select id="bookingService" class="form-control">
-                  <option value="">-- Choose Treatment (Optional) --</option>
-                  <option value="General Consultation & Checkup">General Consultation & Checkup</option>
-                  <option value="Routine Dental Checkups">Routine Dental Checkup & Consultation</option>
-                  <option value="Teeth Whitening">Teeth Whitening</option>
-                  <option value="Root Canal Treatment">Root Canal Treatment (RCT)</option>
-                  <option value="Dental Implants">Dental Implants</option>
-                  <option value="Veneers & Smile Makeover">Veneers & Smile Makeover</option>
-                  <option value="Crowns & Fixed Bridges">Crowns & Fixed Bridges</option>
-                  <option value="Orthodontics & Braces">Orthodontics & Invisible Aligners</option>
-                  <option value="Kids Dentistry">Kids / Pediatric Dentistry</option>
-                  <option value="Teeth Cleaning & Scaling">Teeth Cleaning & Scaling</option>
-                  <option value="Dentures & Bridges">Dentures & Partial Prosthetics</option>
-                  <option value="Oral Surgery">Oral Surgery / Wisdom Tooth</option>
-                  <option value="Gum Surgery">Gum Surgery & Bleeding Gum Treatment</option>
-                  <option value="Fillings & Dental Sealants">Tooth-Coloured Fillings & Sealants</option>
-                  <option value="Digital RVG X-Ray">Digital RVG X-Ray</option>
-                  <option value="Emergency Toothache Relief">Emergency Toothache Relief</option>
-                </select>
+                <div class="input-icon-wrap">
+                  <i class="fas fa-tooth input-icon"></i>
+                  <select id="bookingService" class="form-control fancy-control fancy-select">
+                    <option value="">-- Choose Dental Treatment --</option>
+                    <option value="General Consultation & Checkup">General Consultation & Checkup</option>
+                    <option value="Routine Dental Checkups">Routine Dental Checkup & Consultation</option>
+                    <option value="Teeth Whitening">Teeth Whitening (Instant Brightness)</option>
+                    <option value="Root Canal Treatment">Painless Rotary Root Canal (RCT)</option>
+                    <option value="Dental Implants">Fixed Dental Implants</option>
+                    <option value="Veneers & Smile Makeover">Aesthetic Smile Makeover</option>
+                    <option value="Crowns & Fixed Bridges">Crowns & Fixed Bridges</option>
+                    <option value="Orthodontics & Braces">Orthodontic Braces & Invisible Aligners</option>
+                    <option value="Kids Dentistry">Kids & Pediatric Dentistry</option>
+                    <option value="Teeth Cleaning & Scaling">Deep Scaling & Ultrasonic Cleaning</option>
+                    <option value="Dentures & Bridges">Complete & Partial Dentures</option>
+                    <option value="Oral Surgery">Wisdom Tooth & Minor Oral Surgery</option>
+                    <option value="Gum Surgery">Periodontics & Bleeding Gum Treatment</option>
+                    <option value="Fillings & Dental Sealants">Tooth-Coloured Composite Fillings</option>
+                    <option value="Digital RVG X-Ray">Digital Ultra-Low Radiation X-Ray</option>
+                    <option value="Emergency Toothache Relief">Emergency Toothache Treatment</option>
+                  </select>
+                </div>
               </div>
 
-              <!-- Appointment Date -->
+              <!-- Preferred Date -->
               <div class="form-group">
                 <label class="form-label" for="bookingDate">
-                  Preferred Date <span class="req-star">*</span>
+                  <span>Preferred Date <span class="req-star">*</span></span>
                 </label>
-                <input type="date" id="bookingDate" class="form-control" required>
+                <div class="input-icon-wrap">
+                  <i class="fas fa-calendar-day input-icon"></i>
+                  <input type="date" id="bookingDate" class="form-control fancy-control" required>
+                </div>
                 <div class="sunday-notice-box" id="sundayNotice">
                   <i class="fas fa-exclamation-triangle"></i>
                   <span>Note: Clinic is closed on Sundays. Emergency appointments are subject to doctor confirmation.</span>
                 </div>
               </div>
 
-              <!-- Preferred Time Slot (UI-11) -->
+              <!-- Preferred Time Slot -->
               <div class="form-group">
                 <label class="form-label">
-                  Preferred Time Slot <span class="req-star">*</span>
+                  <span>Preferred Time Slot <span class="req-star">*</span></span>
                 </label>
-                <div class="slots-grid">
-                  <label>
+                <div class="slots-grid fancy-slots-grid">
+                  <label class="slot-pill-card">
                     <input type="radio" name="bookingSlot" value="Morning (10:00 AM - 01:00 PM)" class="slot-radio" checked>
-                    <div class="slot-label">
-                      <i class="fas fa-sun"></i>
-                      <span>Morning</span>
-                      <small>10am - 1pm</small>
+                    <div class="slot-label-box">
+                      <div class="slot-icon-circle slot-icon-morning"><i class="fas fa-sun"></i></div>
+                      <span class="slot-name">Morning</span>
+                      <small class="slot-hours">10am - 1pm</small>
                     </div>
                   </label>
-                  <label>
+                  <label class="slot-pill-card">
                     <input type="radio" name="bookingSlot" value="Afternoon (02:00 PM - 05:00 PM)" class="slot-radio">
-                    <div class="slot-label">
-                      <i class="fas fa-cloud-sun"></i>
-                      <span>Afternoon</span>
-                      <small>2pm - 5pm</small>
+                    <div class="slot-label-box">
+                      <div class="slot-icon-circle slot-icon-afternoon"><i class="fas fa-cloud-sun"></i></div>
+                      <span class="slot-name">Afternoon</span>
+                      <small class="slot-hours">2pm - 5pm</small>
                     </div>
                   </label>
-                  <label>
+                  <label class="slot-pill-card">
                     <input type="radio" name="bookingSlot" value="Evening (05:00 PM - 08:30 PM)" class="slot-radio">
-                    <div class="slot-label">
-                      <i class="fas fa-moon"></i>
-                      <span>Evening</span>
-                      <small>5pm - 8:30pm</small>
+                    <div class="slot-label-box">
+                      <div class="slot-icon-circle slot-icon-evening"><i class="fas fa-moon"></i></div>
+                      <span class="slot-name">Evening</span>
+                      <small class="slot-hours">5pm - 8:30pm</small>
                     </div>
                   </label>
                 </div>
@@ -1362,20 +1407,27 @@
 
               <!-- Notes / Symptoms -->
               <div class="form-group full-width">
-                <label class="form-label" for="bookingNotes">Describe Dental Issue / Notes (Optional)</label>
-                <textarea id="bookingNotes" class="form-control" placeholder="Describe any pain, sensitivity, swelling, or specific questions for Dr. Chandak..."></textarea>
+                <label class="form-label" for="bookingNotes">
+                  <span>Describe Dental Issue / Specific Notes <span class="opt-label">(Optional)</span></span>
+                </label>
+                <textarea id="bookingNotes" class="form-control fancy-control fancy-textarea" placeholder="E.g. Tooth sensitivity, chipped tooth, routine checkup request, or any questions for Dr. Chandak..."></textarea>
               </div>
 
             </div>
 
             <div class="booking-form-footer">
-              <label class="checkbox-wrap">
+              <label class="fancy-checkbox-wrap">
                 <input type="checkbox" id="notifyWhatsApp" checked>
-                <span>Automate: Send instant booking notification to clinic WhatsApp for faster confirmation</span>
+                <span class="custom-check-box"><i class="fas fa-check"></i></span>
+                <span class="check-text">
+                  <strong>Instant WhatsApp Sync:</strong> Send confirmation slip directly to WhatsApp for priority reception handling.
+                </span>
               </label>
 
-              <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.95rem; font-size: 1.05rem;">
-                <i class="fas fa-check-circle"></i> Confirm & Book Appointment Now
+              <button type="submit" class="btn btn-primary fancy-submit-btn">
+                <i class="fas fa-calendar-check"></i>
+                <span>Confirm & Reserve Appointment Now</span>
+                <i class="fas fa-arrow-right btn-arrow"></i>
               </button>
             </div>
           </form>
