@@ -799,207 +799,395 @@
     </div>
   </section>
 
-  <!-- CLINIC & SMILE TRANSFORMATIONS GALLERY -->
+  <!-- CLINIC & SMILE TRANSFORMATIONS GALLERY (CONTINUOUS MOVING MARQUEE) -->
   <section class="section-padding gallery-section" id="gallery">
     <div class="container">
-      <div class="section-head" data-aos="fade-up">
-        <span class="section-subtitle"><i class="fas fa-images"></i> Real Results</span>
-        <h2 class="section-title">Smile Transformations & Clinic Gallery</h2>
+      <div class="section-head" data-aos="fade-up" style="text-align: center; max-width: 780px; margin: 0 auto 2.5rem auto;">
+        <span class="section-subtitle"><i class="fas fa-images"></i> Live Transformations</span>
+        <h2 class="section-title">Smile Transformations & Clinic Showcase</h2>
         <p class="section-desc">
-          Take a look at our authentic patient clinical transformations, smile makeovers, and modern clinic infrastructure at Krida Chowk, Hanuman Nagar.
+          Explore authentic patient before-and-after smile results, precision implants, orthodontic cases, and our hygienic clinic facility. Hover or tap any photo to view full case details.
         </p>
       </div>
+    </div>
 
-      <!-- Category Filter Tabs -->
-      <div class="gallery-filters" data-aos="fade-up" data-aos-delay="100">
-        <button class="gallery-filter-btn active" onclick="filterGallery('all')">All Photos</button>
-        <button class="gallery-filter-btn" onclick="filterGallery('transformations')">Smile Makeovers & Implants</button>
-        <button class="gallery-filter-btn" onclick="filterGallery('clinic')">Clinic Infrastructure</button>
-      </div>
-
-      <!-- Gallery Grid -->
-      <div class="gallery-grid" id="galleryGrid">
-        
-        <!-- Gallery 1: Denture Fix By Implant -->
-        <div class="gallery-item" data-category="transformations" data-aos="fade-up" data-aos-delay="100" onclick="openLightbox('assets/images/gallery/gallery-4.webp', 'Denture Fix By Implant', 'Full arch implant-supported denture fix by Dr. Tushar Chandak - Never too late to improve your smile')">
-          <div class="gallery-img-wrapper">
+    <!-- Infinite Continuous Moving Marquee Track (Left to Right) -->
+    <div class="gallery-marquee-container" id="galleryMarqueeContainer" aria-label="Moving Clinical Case Showcase">
+      <div class="gallery-marquee-track" id="galleryMarqueeTrack">
+        <!-- Card 1-1: Denture Fix By Implant -->
+        <div class="gallery-card" onclick="openLightbox('assets/images/gallery/gallery-4.webp', 'Denture Fix By Implant', 'Full arch implant-supported fixed denture restoring youthful smile & chewing confidence.')">
+          <div class="gallery-card-img-wrapper">
             <span class="gallery-badge badge-transformation"><i class="fas fa-star"></i> Implant Transformation</span>
             <img src="assets/images/gallery/gallery-4.webp" alt="Denture Fix By Implant - Dr Tushar Chandak" loading="lazy">
             <div class="gallery-overlay-icon">
-              <span><i class="fas fa-search-plus"></i></span>
+              <span><i class="fas fa-search-plus"></i> View Full Photo</span>
             </div>
           </div>
-          <div class="gallery-info">
+          <div class="gallery-card-info">
             <h4>Denture Fix By Implant</h4>
             <p>Full arch implant-supported fixed denture restoring youthful smile & chewing confidence.</p>
           </div>
         </div>
 
-        <!-- Gallery 2: Complete Smile Makeover -->
-        <div class="gallery-item" data-category="transformations" data-aos="fade-up" data-aos-delay="150" onclick="openLightbox('assets/images/gallery/gallery-5.webp', 'Complete Smile Rehabilitation', 'Aesthetic smile makeover and dental restoration by Dr. Tushar Chandak')">
-          <div class="gallery-img-wrapper">
+        <!-- Card 1-2: Complete Smile Rehabilitation -->
+        <div class="gallery-card" onclick="openLightbox('assets/images/gallery/gallery-5.webp', 'Complete Smile Rehabilitation', 'Comprehensive smile design, aesthetic teeth alignment, and restorative dental care.')">
+          <div class="gallery-card-img-wrapper">
             <span class="gallery-badge badge-transformation"><i class="fas fa-magic"></i> Smile Makeover</span>
-            <img src="assets/images/gallery/gallery-5.webp" alt="Complete Smile Makeover - Dr Tushar Chandak" loading="lazy">
+            <img src="assets/images/gallery/gallery-5.webp" alt="Complete Smile Rehabilitation - Dr Tushar Chandak" loading="lazy">
             <div class="gallery-overlay-icon">
-              <span><i class="fas fa-search-plus"></i></span>
+              <span><i class="fas fa-search-plus"></i> View Full Photo</span>
             </div>
           </div>
-          <div class="gallery-info">
+          <div class="gallery-card-info">
             <h4>Complete Smile Rehabilitation</h4>
             <p>Comprehensive smile design, aesthetic teeth alignment, and restorative dental care.</p>
           </div>
         </div>
 
-        <!-- Gallery 3: Diastema (Gap) Closure -->
-        <div class="gallery-item" data-category="transformations" data-aos="fade-up" data-aos-delay="200" onclick="openLightbox('assets/images/gallery/gallery-12.webp', 'Diastema (Midline Gap) Closure', 'Before & After cosmetic tooth gap closure for a seamless radiant smile')">
-          <div class="gallery-img-wrapper">
+        <!-- Card 1-3: Midline Gap (Diastema) Closure -->
+        <div class="gallery-card" onclick="openLightbox('assets/images/gallery/gallery-12.webp', 'Midline Gap (Diastema) Closure', 'Cosmetic restorative gap closure giving patient a balanced, natural smile.')">
+          <div class="gallery-card-img-wrapper">
             <span class="gallery-badge badge-transformation"><i class="fas fa-tooth"></i> Gap Closure</span>
-            <img src="assets/images/gallery/gallery-12.webp" alt="Midline Gap Closure Before After - Dr Tushar Chandak" loading="lazy">
+            <img src="assets/images/gallery/gallery-12.webp" alt="Midline Gap (Diastema) Closure - Dr Tushar Chandak" loading="lazy">
             <div class="gallery-overlay-icon">
-              <span><i class="fas fa-search-plus"></i></span>
+              <span><i class="fas fa-search-plus"></i> View Full Photo</span>
             </div>
           </div>
-          <div class="gallery-info">
+          <div class="gallery-card-info">
             <h4>Midline Gap (Diastema) Closure</h4>
             <p>Cosmetic restorative gap closure giving patient a balanced, natural smile.</p>
           </div>
         </div>
 
-        <!-- Gallery 4: Modern Dental Operatory Chair -->
-        <div class="gallery-item" data-category="clinic" data-aos="fade-up" data-aos-delay="100" onclick="openLightbox('assets/images/gallery/gallery-2.webp', 'Modern Clinic Operatory Chair', 'Advanced ergonomic dental unit with Class-B sterilised instruments and modern delivery system')">
-          <div class="gallery-img-wrapper">
+        <!-- Card 1-4: Advanced Dental Operatory -->
+        <div class="gallery-card" onclick="openLightbox('assets/images/gallery/gallery-2.webp', 'Advanced Dental Operatory', 'Ergonomic patient chair equipped with multi-stage hygienic water & LED curing systems.')">
+          <div class="gallery-card-img-wrapper">
             <span class="gallery-badge badge-clinic"><i class="fas fa-clinic-medical"></i> Clinic Setup</span>
-            <img src="assets/images/gallery/gallery-2.webp" alt="Dental Operatory Setup - Dr Tushar Chandak" loading="lazy">
+            <img src="assets/images/gallery/gallery-2.webp" alt="Advanced Dental Operatory - Dr Tushar Chandak" loading="lazy">
             <div class="gallery-overlay-icon">
-              <span><i class="fas fa-search-plus"></i></span>
+              <span><i class="fas fa-search-plus"></i> View Full Photo</span>
             </div>
           </div>
-          <div class="gallery-info">
+          <div class="gallery-card-info">
             <h4>Advanced Dental Operatory</h4>
             <p>Ergonomic patient chair equipped with multi-stage hygienic water & LED curing systems.</p>
           </div>
         </div>
 
-        <!-- Gallery 5: Tooth Restoration & Aesthetic Fix -->
-        <div class="gallery-item" data-category="transformations" data-aos="fade-up" data-aos-delay="150" onclick="openLightbox('assets/images/gallery/gallery-9.webp', 'Tooth Restoration & Aesthetic Fix', 'Restoring broken and spaced teeth to healthy natural alignment')">
-          <div class="gallery-img-wrapper">
+        <!-- Card 1-5: Tooth Restoration & Aesthetic Fix -->
+        <div class="gallery-card" onclick="openLightbox('assets/images/gallery/gallery-9.webp', 'Tooth Restoration & Aesthetic Fix', 'Painless composite and crown rehabilitation for worn down and spaced teeth.')">
+          <div class="gallery-card-img-wrapper">
             <span class="gallery-badge badge-transformation"><i class="fas fa-smile"></i> Tooth Restoration</span>
-            <img src="assets/images/gallery/gallery-9.webp" alt="Tooth Restoration - Dr Tushar Chandak" loading="lazy">
+            <img src="assets/images/gallery/gallery-9.webp" alt="Tooth Restoration & Aesthetic Fix - Dr Tushar Chandak" loading="lazy">
             <div class="gallery-overlay-icon">
-              <span><i class="fas fa-search-plus"></i></span>
+              <span><i class="fas fa-search-plus"></i> View Full Photo</span>
             </div>
           </div>
-          <div class="gallery-info">
+          <div class="gallery-card-info">
             <h4>Tooth Restoration & Aesthetic Fix</h4>
             <p>Painless composite and crown rehabilitation for worn down and spaced teeth.</p>
           </div>
         </div>
 
-        <!-- Gallery 6: Orthodontic Braces Alignment -->
-        <div class="gallery-item" data-category="transformations" data-aos="fade-up" data-aos-delay="200" onclick="openLightbox('assets/images/gallery/gallery-1.webp', 'Orthodontic Braces Alignment', 'Post-braces alignment result showing straight teeth and perfect occlusal bite')">
-          <div class="gallery-img-wrapper">
+        <!-- Card 1-6: Orthodontic Alignment Result -->
+        <div class="gallery-card" onclick="openLightbox('assets/images/gallery/gallery-1.webp', 'Orthodontic Alignment Result', 'Straightening crowded and misaligned teeth for lasting oral health and confidence.')">
+          <div class="gallery-card-img-wrapper">
             <span class="gallery-badge badge-transformation"><i class="fas fa-teeth"></i> Orthodontic Result</span>
-            <img src="assets/images/gallery/gallery-1.webp" alt="Braces Result - Dr Tushar Chandak" loading="lazy">
+            <img src="assets/images/gallery/gallery-1.webp" alt="Orthodontic Alignment Result - Dr Tushar Chandak" loading="lazy">
             <div class="gallery-overlay-icon">
-              <span><i class="fas fa-search-plus"></i></span>
+              <span><i class="fas fa-search-plus"></i> View Full Photo</span>
             </div>
           </div>
-          <div class="gallery-info">
+          <div class="gallery-card-info">
             <h4>Orthodontic Alignment Result</h4>
             <p>Straightening crowded and misaligned teeth for lasting oral health and confidence.</p>
           </div>
         </div>
 
-        <!-- Gallery 7: Fixed Zirconia Cap & Bridge -->
-        <div class="gallery-item" data-category="transformations" data-aos="fade-up" data-aos-delay="100" onclick="openLightbox('assets/images/gallery/gallery-10.webp', 'Fixed Ceramic & Zirconia Crown', 'Natural-looking tooth-shaded ceramic crowns with up to 10 years clinical warranty')">
-          <div class="gallery-img-wrapper">
+        <!-- Card 1-7: Fixed Ceramic & Zirconia Cap -->
+        <div class="gallery-card" onclick="openLightbox('assets/images/gallery/gallery-10.webp', 'Fixed Ceramic & Zirconia Cap', 'High-translucency Zirconia crowns providing superior strength and lifelike smile aesthetics.')">
+          <div class="gallery-card-img-wrapper">
             <span class="gallery-badge badge-transformation"><i class="fas fa-award"></i> Fixed Crowns</span>
-            <img src="assets/images/gallery/gallery-10.webp" alt="Zirconia Crown Bridge - Dr Tushar Chandak" loading="lazy">
+            <img src="assets/images/gallery/gallery-10.webp" alt="Fixed Ceramic & Zirconia Cap - Dr Tushar Chandak" loading="lazy">
             <div class="gallery-overlay-icon">
-              <span><i class="fas fa-search-plus"></i></span>
+              <span><i class="fas fa-search-plus"></i> View Full Photo</span>
             </div>
           </div>
-          <div class="gallery-info">
+          <div class="gallery-card-info">
             <h4>Fixed Ceramic & Zirconia Cap</h4>
             <p>High-translucency Zirconia crowns providing superior strength and lifelike smile aesthetics.</p>
           </div>
         </div>
 
-        <!-- Gallery 8: Clinical Examination & Care -->
-        <div class="gallery-item" data-category="clinic" data-aos="fade-up" data-aos-delay="150" onclick="openLightbox('assets/images/gallery/gallery-3.webp', 'Clinical Examination & Care', 'Thorough dental checkup and patient-first diagnostics at Dr Tushar Chandak clinic')">
-          <div class="gallery-img-wrapper">
+        <!-- Card 1-8: Gentle Clinical Diagnostics -->
+        <div class="gallery-card" onclick="openLightbox('assets/images/gallery/gallery-3.webp', 'Gentle Clinical Diagnostics', 'Detailed oral evaluation, explaining every step transparently to the patient.')">
+          <div class="gallery-card-img-wrapper">
             <span class="gallery-badge badge-clinic"><i class="fas fa-user-md"></i> Consultation</span>
-            <img src="assets/images/gallery/gallery-3.webp" alt="Clinical Examination - Dr Tushar Chandak" loading="lazy">
+            <img src="assets/images/gallery/gallery-3.webp" alt="Gentle Clinical Diagnostics - Dr Tushar Chandak" loading="lazy">
             <div class="gallery-overlay-icon">
-              <span><i class="fas fa-search-plus"></i></span>
+              <span><i class="fas fa-search-plus"></i> View Full Photo</span>
             </div>
           </div>
-          <div class="gallery-info">
+          <div class="gallery-card-info">
             <h4>Gentle Clinical Diagnostics</h4>
             <p>Detailed oral evaluation, explaining every step transparently to the patient.</p>
           </div>
         </div>
 
-        <!-- Gallery 9: Clear Braces & Tooth Straightening -->
-        <div class="gallery-item" data-category="transformations" data-aos="fade-up" data-aos-delay="200" onclick="openLightbox('assets/images/gallery/gallery-6.webp', 'Clear Braces & Aligners Case', 'Modern orthodontic alignment with minimal discomfort')">
-          <div class="gallery-img-wrapper">
+        <!-- Card 1-9: Orthodontic Alignment Case -->
+        <div class="gallery-card" onclick="openLightbox('assets/images/gallery/gallery-6.webp', 'Orthodontic Alignment Case', 'Specialized ortho treatment restoring harmonious facial and dental symmetry.')">
+          <div class="gallery-card-img-wrapper">
             <span class="gallery-badge badge-transformation"><i class="fas fa-teeth-open"></i> Braces Case</span>
-            <img src="assets/images/gallery/gallery-6.webp" alt="Clear Braces Case - Dr Tushar Chandak" loading="lazy">
+            <img src="assets/images/gallery/gallery-6.webp" alt="Orthodontic Alignment Case - Dr Tushar Chandak" loading="lazy">
             <div class="gallery-overlay-icon">
-              <span><i class="fas fa-search-plus"></i></span>
+              <span><i class="fas fa-search-plus"></i> View Full Photo</span>
             </div>
           </div>
-          <div class="gallery-info">
+          <div class="gallery-card-info">
             <h4>Orthodontic Alignment Case</h4>
             <p>Specialized ortho treatment restoring harmonious facial and dental symmetry.</p>
           </div>
         </div>
 
-        <!-- Gallery 10: Painless Procedure Setup -->
-        <div class="gallery-item" data-category="clinic" data-aos="fade-up" data-aos-delay="100" onclick="openLightbox('assets/images/gallery/gallery-7.webp', 'Painless Treatment Suite', 'Calm and clean treatment suite designed for stress-free visits')">
-          <div class="gallery-img-wrapper">
+        <!-- Card 1-10: Stress-Free Treatment Suite -->
+        <div class="gallery-card" onclick="openLightbox('assets/images/gallery/gallery-7.webp', 'Stress-Free Treatment Suite', 'Hygienic, comfortable patient setting ensuring painless and relaxed treatment.')">
+          <div class="gallery-card-img-wrapper">
             <span class="gallery-badge badge-clinic"><i class="fas fa-hospital"></i> Treatment Suite</span>
-            <img src="assets/images/gallery/gallery-7.webp" alt="Treatment Suite - Dr Tushar Chandak" loading="lazy">
+            <img src="assets/images/gallery/gallery-7.webp" alt="Stress-Free Treatment Suite - Dr Tushar Chandak" loading="lazy">
             <div class="gallery-overlay-icon">
-              <span><i class="fas fa-search-plus"></i></span>
+              <span><i class="fas fa-search-plus"></i> View Full Photo</span>
             </div>
           </div>
-          <div class="gallery-info">
-            <h4>Stress-Free Treatment Environment</h4>
+          <div class="gallery-card-info">
+            <h4>Stress-Free Treatment Suite</h4>
             <p>Hygienic, comfortable patient setting ensuring painless and relaxed treatment.</p>
           </div>
         </div>
 
-        <!-- Gallery 11: Smile Makeover Aesthetics -->
-        <div class="gallery-item" data-category="transformations" data-aos="fade-up" data-aos-delay="150" onclick="openLightbox('assets/images/gallery/gallery-11.webp', 'Aesthetic Smile Makeover', 'Enhancing tooth shade and symmetry with cosmetic veneers and crowns')">
-          <div class="gallery-img-wrapper">
+        <!-- Card 1-11: Aesthetic Smile Makeover -->
+        <div class="gallery-card" onclick="openLightbox('assets/images/gallery/gallery-11.webp', 'Aesthetic Smile Makeover', 'Customized smile correction delivering radiant, natural-looking results.')">
+          <div class="gallery-card-img-wrapper">
             <span class="gallery-badge badge-transformation"><i class="fas fa-heart"></i> Aesthetic Makeover</span>
             <img src="assets/images/gallery/gallery-11.webp" alt="Aesthetic Smile Makeover - Dr Tushar Chandak" loading="lazy">
             <div class="gallery-overlay-icon">
-              <span><i class="fas fa-search-plus"></i></span>
+              <span><i class="fas fa-search-plus"></i> View Full Photo</span>
             </div>
           </div>
-          <div class="gallery-info">
+          <div class="gallery-card-info">
             <h4>Aesthetic Smile Makeover</h4>
             <p>Customized smile correction delivering radiant, natural-looking results.</p>
           </div>
         </div>
 
-        <!-- Gallery 12: Natural Enamel Enhancement -->
-        <div class="gallery-item" data-category="transformations" data-aos="fade-up" data-aos-delay="200" onclick="openLightbox('assets/images/gallery/gallery-8.webp', 'Natural Enamel Enhancement', 'Gentle polishing and shade enhancement for healthy teeth')">
-          <div class="gallery-img-wrapper">
+        <!-- Card 1-12: Smile Brightening & Hygiene -->
+        <div class="gallery-card" onclick="openLightbox('assets/images/gallery/gallery-8.webp', 'Smile Brightening & Hygiene', 'Professional deep scaling and polishing for healthy pink gums and shining teeth.')">
+          <div class="gallery-card-img-wrapper">
             <span class="gallery-badge badge-transformation"><i class="fas fa-sparkles"></i> Smile Brightening</span>
-            <img src="assets/images/gallery/gallery-8.webp" alt="Smile Brightening - Dr Tushar Chandak" loading="lazy">
+            <img src="assets/images/gallery/gallery-8.webp" alt="Smile Brightening & Hygiene - Dr Tushar Chandak" loading="lazy">
             <div class="gallery-overlay-icon">
-              <span><i class="fas fa-search-plus"></i></span>
+              <span><i class="fas fa-search-plus"></i> View Full Photo</span>
             </div>
           </div>
-          <div class="gallery-info">
+          <div class="gallery-card-info">
             <h4>Smile Brightening & Hygiene</h4>
             <p>Professional deep scaling and polishing for healthy pink gums and shining teeth.</p>
           </div>
         </div>
 
+        <!-- Card 2-1: Denture Fix By Implant -->
+        <div class="gallery-card" onclick="openLightbox('assets/images/gallery/gallery-4.webp', 'Denture Fix By Implant', 'Full arch implant-supported fixed denture restoring youthful smile & chewing confidence.')">
+          <div class="gallery-card-img-wrapper">
+            <span class="gallery-badge badge-transformation"><i class="fas fa-star"></i> Implant Transformation</span>
+            <img src="assets/images/gallery/gallery-4.webp" alt="Denture Fix By Implant - Dr Tushar Chandak" loading="lazy">
+            <div class="gallery-overlay-icon">
+              <span><i class="fas fa-search-plus"></i> View Full Photo</span>
+            </div>
+          </div>
+          <div class="gallery-card-info">
+            <h4>Denture Fix By Implant</h4>
+            <p>Full arch implant-supported fixed denture restoring youthful smile & chewing confidence.</p>
+          </div>
+        </div>
+
+        <!-- Card 2-2: Complete Smile Rehabilitation -->
+        <div class="gallery-card" onclick="openLightbox('assets/images/gallery/gallery-5.webp', 'Complete Smile Rehabilitation', 'Comprehensive smile design, aesthetic teeth alignment, and restorative dental care.')">
+          <div class="gallery-card-img-wrapper">
+            <span class="gallery-badge badge-transformation"><i class="fas fa-magic"></i> Smile Makeover</span>
+            <img src="assets/images/gallery/gallery-5.webp" alt="Complete Smile Rehabilitation - Dr Tushar Chandak" loading="lazy">
+            <div class="gallery-overlay-icon">
+              <span><i class="fas fa-search-plus"></i> View Full Photo</span>
+            </div>
+          </div>
+          <div class="gallery-card-info">
+            <h4>Complete Smile Rehabilitation</h4>
+            <p>Comprehensive smile design, aesthetic teeth alignment, and restorative dental care.</p>
+          </div>
+        </div>
+
+        <!-- Card 2-3: Midline Gap (Diastema) Closure -->
+        <div class="gallery-card" onclick="openLightbox('assets/images/gallery/gallery-12.webp', 'Midline Gap (Diastema) Closure', 'Cosmetic restorative gap closure giving patient a balanced, natural smile.')">
+          <div class="gallery-card-img-wrapper">
+            <span class="gallery-badge badge-transformation"><i class="fas fa-tooth"></i> Gap Closure</span>
+            <img src="assets/images/gallery/gallery-12.webp" alt="Midline Gap (Diastema) Closure - Dr Tushar Chandak" loading="lazy">
+            <div class="gallery-overlay-icon">
+              <span><i class="fas fa-search-plus"></i> View Full Photo</span>
+            </div>
+          </div>
+          <div class="gallery-card-info">
+            <h4>Midline Gap (Diastema) Closure</h4>
+            <p>Cosmetic restorative gap closure giving patient a balanced, natural smile.</p>
+          </div>
+        </div>
+
+        <!-- Card 2-4: Advanced Dental Operatory -->
+        <div class="gallery-card" onclick="openLightbox('assets/images/gallery/gallery-2.webp', 'Advanced Dental Operatory', 'Ergonomic patient chair equipped with multi-stage hygienic water & LED curing systems.')">
+          <div class="gallery-card-img-wrapper">
+            <span class="gallery-badge badge-clinic"><i class="fas fa-clinic-medical"></i> Clinic Setup</span>
+            <img src="assets/images/gallery/gallery-2.webp" alt="Advanced Dental Operatory - Dr Tushar Chandak" loading="lazy">
+            <div class="gallery-overlay-icon">
+              <span><i class="fas fa-search-plus"></i> View Full Photo</span>
+            </div>
+          </div>
+          <div class="gallery-card-info">
+            <h4>Advanced Dental Operatory</h4>
+            <p>Ergonomic patient chair equipped with multi-stage hygienic water & LED curing systems.</p>
+          </div>
+        </div>
+
+        <!-- Card 2-5: Tooth Restoration & Aesthetic Fix -->
+        <div class="gallery-card" onclick="openLightbox('assets/images/gallery/gallery-9.webp', 'Tooth Restoration & Aesthetic Fix', 'Painless composite and crown rehabilitation for worn down and spaced teeth.')">
+          <div class="gallery-card-img-wrapper">
+            <span class="gallery-badge badge-transformation"><i class="fas fa-smile"></i> Tooth Restoration</span>
+            <img src="assets/images/gallery/gallery-9.webp" alt="Tooth Restoration & Aesthetic Fix - Dr Tushar Chandak" loading="lazy">
+            <div class="gallery-overlay-icon">
+              <span><i class="fas fa-search-plus"></i> View Full Photo</span>
+            </div>
+          </div>
+          <div class="gallery-card-info">
+            <h4>Tooth Restoration & Aesthetic Fix</h4>
+            <p>Painless composite and crown rehabilitation for worn down and spaced teeth.</p>
+          </div>
+        </div>
+
+        <!-- Card 2-6: Orthodontic Alignment Result -->
+        <div class="gallery-card" onclick="openLightbox('assets/images/gallery/gallery-1.webp', 'Orthodontic Alignment Result', 'Straightening crowded and misaligned teeth for lasting oral health and confidence.')">
+          <div class="gallery-card-img-wrapper">
+            <span class="gallery-badge badge-transformation"><i class="fas fa-teeth"></i> Orthodontic Result</span>
+            <img src="assets/images/gallery/gallery-1.webp" alt="Orthodontic Alignment Result - Dr Tushar Chandak" loading="lazy">
+            <div class="gallery-overlay-icon">
+              <span><i class="fas fa-search-plus"></i> View Full Photo</span>
+            </div>
+          </div>
+          <div class="gallery-card-info">
+            <h4>Orthodontic Alignment Result</h4>
+            <p>Straightening crowded and misaligned teeth for lasting oral health and confidence.</p>
+          </div>
+        </div>
+
+        <!-- Card 2-7: Fixed Ceramic & Zirconia Cap -->
+        <div class="gallery-card" onclick="openLightbox('assets/images/gallery/gallery-10.webp', 'Fixed Ceramic & Zirconia Cap', 'High-translucency Zirconia crowns providing superior strength and lifelike smile aesthetics.')">
+          <div class="gallery-card-img-wrapper">
+            <span class="gallery-badge badge-transformation"><i class="fas fa-award"></i> Fixed Crowns</span>
+            <img src="assets/images/gallery/gallery-10.webp" alt="Fixed Ceramic & Zirconia Cap - Dr Tushar Chandak" loading="lazy">
+            <div class="gallery-overlay-icon">
+              <span><i class="fas fa-search-plus"></i> View Full Photo</span>
+            </div>
+          </div>
+          <div class="gallery-card-info">
+            <h4>Fixed Ceramic & Zirconia Cap</h4>
+            <p>High-translucency Zirconia crowns providing superior strength and lifelike smile aesthetics.</p>
+          </div>
+        </div>
+
+        <!-- Card 2-8: Gentle Clinical Diagnostics -->
+        <div class="gallery-card" onclick="openLightbox('assets/images/gallery/gallery-3.webp', 'Gentle Clinical Diagnostics', 'Detailed oral evaluation, explaining every step transparently to the patient.')">
+          <div class="gallery-card-img-wrapper">
+            <span class="gallery-badge badge-clinic"><i class="fas fa-user-md"></i> Consultation</span>
+            <img src="assets/images/gallery/gallery-3.webp" alt="Gentle Clinical Diagnostics - Dr Tushar Chandak" loading="lazy">
+            <div class="gallery-overlay-icon">
+              <span><i class="fas fa-search-plus"></i> View Full Photo</span>
+            </div>
+          </div>
+          <div class="gallery-card-info">
+            <h4>Gentle Clinical Diagnostics</h4>
+            <p>Detailed oral evaluation, explaining every step transparently to the patient.</p>
+          </div>
+        </div>
+
+        <!-- Card 2-9: Orthodontic Alignment Case -->
+        <div class="gallery-card" onclick="openLightbox('assets/images/gallery/gallery-6.webp', 'Orthodontic Alignment Case', 'Specialized ortho treatment restoring harmonious facial and dental symmetry.')">
+          <div class="gallery-card-img-wrapper">
+            <span class="gallery-badge badge-transformation"><i class="fas fa-teeth-open"></i> Braces Case</span>
+            <img src="assets/images/gallery/gallery-6.webp" alt="Orthodontic Alignment Case - Dr Tushar Chandak" loading="lazy">
+            <div class="gallery-overlay-icon">
+              <span><i class="fas fa-search-plus"></i> View Full Photo</span>
+            </div>
+          </div>
+          <div class="gallery-card-info">
+            <h4>Orthodontic Alignment Case</h4>
+            <p>Specialized ortho treatment restoring harmonious facial and dental symmetry.</p>
+          </div>
+        </div>
+
+        <!-- Card 2-10: Stress-Free Treatment Suite -->
+        <div class="gallery-card" onclick="openLightbox('assets/images/gallery/gallery-7.webp', 'Stress-Free Treatment Suite', 'Hygienic, comfortable patient setting ensuring painless and relaxed treatment.')">
+          <div class="gallery-card-img-wrapper">
+            <span class="gallery-badge badge-clinic"><i class="fas fa-hospital"></i> Treatment Suite</span>
+            <img src="assets/images/gallery/gallery-7.webp" alt="Stress-Free Treatment Suite - Dr Tushar Chandak" loading="lazy">
+            <div class="gallery-overlay-icon">
+              <span><i class="fas fa-search-plus"></i> View Full Photo</span>
+            </div>
+          </div>
+          <div class="gallery-card-info">
+            <h4>Stress-Free Treatment Suite</h4>
+            <p>Hygienic, comfortable patient setting ensuring painless and relaxed treatment.</p>
+          </div>
+        </div>
+
+        <!-- Card 2-11: Aesthetic Smile Makeover -->
+        <div class="gallery-card" onclick="openLightbox('assets/images/gallery/gallery-11.webp', 'Aesthetic Smile Makeover', 'Customized smile correction delivering radiant, natural-looking results.')">
+          <div class="gallery-card-img-wrapper">
+            <span class="gallery-badge badge-transformation"><i class="fas fa-heart"></i> Aesthetic Makeover</span>
+            <img src="assets/images/gallery/gallery-11.webp" alt="Aesthetic Smile Makeover - Dr Tushar Chandak" loading="lazy">
+            <div class="gallery-overlay-icon">
+              <span><i class="fas fa-search-plus"></i> View Full Photo</span>
+            </div>
+          </div>
+          <div class="gallery-card-info">
+            <h4>Aesthetic Smile Makeover</h4>
+            <p>Customized smile correction delivering radiant, natural-looking results.</p>
+          </div>
+        </div>
+
+        <!-- Card 2-12: Smile Brightening & Hygiene -->
+        <div class="gallery-card" onclick="openLightbox('assets/images/gallery/gallery-8.webp', 'Smile Brightening & Hygiene', 'Professional deep scaling and polishing for healthy pink gums and shining teeth.')">
+          <div class="gallery-card-img-wrapper">
+            <span class="gallery-badge badge-transformation"><i class="fas fa-sparkles"></i> Smile Brightening</span>
+            <img src="assets/images/gallery/gallery-8.webp" alt="Smile Brightening & Hygiene - Dr Tushar Chandak" loading="lazy">
+            <div class="gallery-overlay-icon">
+              <span><i class="fas fa-search-plus"></i> View Full Photo</span>
+            </div>
+          </div>
+          <div class="gallery-card-info">
+            <h4>Smile Brightening & Hygiene</h4>
+            <p>Professional deep scaling and polishing for healthy pink gums and shining teeth.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Controls Bar -->
+    <div class="container">
+      <div class="gallery-controls-bar">
+        <button class="gallery-ctrl-btn" id="galleryPauseBtn" onclick="toggleGalleryMarquee()">
+          <i class="fas fa-pause"></i> <span>Pause Animation</span>
+        </button>
+        <button class="gallery-ctrl-btn" onclick="adjustMarqueeSpeed(1.5)">
+          <i class="fas fa-forward"></i> <span>Faster</span>
+        </button>
+        <button class="gallery-ctrl-btn" onclick="adjustMarqueeSpeed(0.7)">
+          <i class="fas fa-backward"></i> <span>Normal Speed</span>
+        </button>
       </div>
     </div>
   </section>

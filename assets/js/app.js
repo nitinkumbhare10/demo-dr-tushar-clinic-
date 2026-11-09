@@ -894,25 +894,31 @@ function initSmoothScroll() {
   });
 }
 
-/* ---------------- 17. GALLERY FILTERS & LIGHTBOX ---------------- */
-window.filterGallery = function(category) {
-  const buttons = document.querySelectorAll('.gallery-filter-btn');
-  buttons.forEach(btn => btn.classList.remove('active'));
+/* ---------------- 17. GALLERY CONTINUOUS MARQUEE & LIGHTBOX ---------------- */
+let isMarqueePaused = false;
+let currentMarqueeDuration = 45; // seconds
 
-  const activeBtn = Array.from(buttons).find(b => {
-    const text = b.getAttribute('onclick') || '';
-    return text.includes(`'${category}'`);
-  });
-  if (activeBtn) activeBtn.classList.add('active');
+window.toggleGalleryMarquee = function() {
+  const track = document.getElementById('galleryMarqueeTrack');
+  const btn = document.getElementById('galleryPauseBtn');
+  if (!track) return;
 
-  const items = document.querySelectorAll('.gallery-item');
-  items.forEach(item => {
-    if (category === 'all' || item.getAttribute('data-category') === category) {
-      item.style.display = 'flex';
-    } else {
-      item.style.display = 'none';
-    }
-  });
+  isMarqueePaused = !isMarqueePaused;
+  if (isMarqueePaused) {
+    track.classList.add('paused');
+    if (btn) btn.innerHTML = '<i class="fas fa-play"></i> <span>Resume Motion</span>';
+  } else {
+    track.classList.remove('paused');
+    if (btn) btn.innerHTML = '<i class="fas fa-pause"></i> <span>Pause Animation</span>';
+  }
+};
+
+window.adjustMarqueeSpeed = function(speedFactor) {
+  const track = document.getElementById('galleryMarqueeTrack');
+  if (!track) return;
+  const newDuration = Math.round(45 / speedFactor);
+  track.style.animationDuration = `${newDuration}s`;
+  showToast(`Animation speed set: ${speedFactor === 1.5 ? 'Faster' : 'Normal'}`, 'info');
 };
 
 window.openLightbox = function(imgSrc, title, desc) {

@@ -1,0 +1,14 @@
+{
+  "name": "dr-tushar-chandak-dental-clinic",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev --port 8080 --host",
+    "start": "astro dev --port 8080 --host",
+    "build": "astro build",
+    "preview": "astro preview --port 8080 --host"
+  },
+  "dependencies": {
+    "astro": "^7.4.7"
+  }
+}
