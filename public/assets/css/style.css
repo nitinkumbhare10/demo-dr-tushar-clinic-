@@ -2872,7 +2872,7 @@ textarea.form-control {
   display: flex;
   gap: 1.75rem;
   width: max-content;
-  animation: marqueeMoveRight 45s linear infinite;
+  animation: marqueeMoveRight 105s linear infinite;
   will-change: transform;
 }
 

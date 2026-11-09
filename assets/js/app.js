@@ -896,7 +896,7 @@ function initSmoothScroll() {
 
 /* ---------------- 17. GALLERY CONTINUOUS MARQUEE & LIGHTBOX ---------------- */
 let isMarqueePaused = false;
-let currentMarqueeDuration = 45; // seconds
+let currentMarqueeDuration = 105; // seconds (smooth, calm glide)
 
 window.toggleGalleryMarquee = function() {
   const track = document.getElementById('galleryMarqueeTrack');
