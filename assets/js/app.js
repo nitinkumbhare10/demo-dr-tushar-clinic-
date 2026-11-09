@@ -833,8 +833,9 @@ function initBackToTop() {
 function initKeyboardModalDismiss() {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      const activeModals = document.querySelectorAll('.modal-overlay.active');
+      const activeModals = document.querySelectorAll('.modal-overlay.active, .lightbox-modal.active');
       activeModals.forEach(m => m.classList.remove('active'));
+      document.body.style.overflow = '';
     }
   });
 }
@@ -892,3 +893,50 @@ function initSmoothScroll() {
     });
   });
 }
+
+/* ---------------- 17. GALLERY FILTERS & LIGHTBOX ---------------- */
+window.filterGallery = function(category) {
+  const buttons = document.querySelectorAll('.gallery-filter-btn');
+  buttons.forEach(btn => btn.classList.remove('active'));
+
+  const activeBtn = Array.from(buttons).find(b => {
+    const text = b.getAttribute('onclick') || '';
+    return text.includes(`'${category}'`);
+  });
+  if (activeBtn) activeBtn.classList.add('active');
+
+  const items = document.querySelectorAll('.gallery-item');
+  items.forEach(item => {
+    if (category === 'all' || item.getAttribute('data-category') === category) {
+      item.style.display = 'flex';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+};
+
+window.openLightbox = function(imgSrc, title, desc) {
+  const modal = document.getElementById('galleryLightboxModal');
+  const imgEl = document.getElementById('lightboxImg');
+  const titleEl = document.getElementById('lightboxTitle');
+  const descEl = document.getElementById('lightboxDesc');
+
+  if (!modal || !imgEl) return;
+
+  imgEl.src = imgSrc;
+  if (titleEl) titleEl.textContent = title;
+  if (descEl) descEl.textContent = desc;
+
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+};
+
+window.closeLightbox = function(e) {
+  if (e && e.stopPropagation) e.stopPropagation();
+  const modal = document.getElementById('galleryLightboxModal');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+};
+
