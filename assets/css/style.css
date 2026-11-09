@@ -1,35 +1,53 @@
 /* -------------------------------------------------------------
-   Dr Tushar Chandak Family Dental Care - Modern Dental Hospital Theme
-   Optimized Design System (Tier 1 & Tier 2 UI/UX Enhancements)
-   Teal (#009d94), Coral Orange (#f2743a), Slate Navy (#0e2338)
+   Dr Tushar Chandak Family Dental Care - Vibrant Practice Design System
+   Adapted from Vibrant Practice (DESIGN.md - opendesignmd.com)
+   Warm linen (#FAF8F5), Deep Ink (#2D2A24), Action Yellow (#F5D76E),
+   Clinical Teal (#0D9488), Medical Sky Gradient (#2563EB -> #60A5FA)
 ------------------------------------------------------------- */
 
 :root {
-  --primary: #009d94;
-  --primary-hover: #00827a;
-  --primary-light: #e6f6f5;
-  --primary-subtle: #f0fbfb;
-  --primary-dark: #00605a;
-  
-  --accent: #f2743a;
-  --accent-hover: #dc5f26;
-  --accent-light: #fef1eb;
-  
-  --secondary: #0e2338;
-  --secondary-light: #1a3654;
-  --navy-dark: #091726;
-  
-  --text-main: #1f2937;
-  --text-muted: #64748b;
-  --text-light: #94a3b8;
-  
-  --bg-page: #f8fafc;
+  /* Warm Linen / Parchment Foundation */
+  --canvas: #FAF8F5;
+  --bg-page: #FAF8F5;
   --bg-white: #ffffff;
-  --bg-subtle: #f1f5f9;
+  --bg-subtle: #F2EFE9;
+  --surface-warm: #EFECE5;
+  --surface-card: #ffffff;
   
-  --border: #e2e8f0;
-  --border-light: #edf2f7;
-  --border-focus: #009d94;
+  /* Ink & Typography */
+  --ink: #6B6558;
+  --ink-deep: #2D2A24;
+  --text-main: #3D3A34;
+  --text-muted: #6B6558;
+  --text-light: #8E887B;
+  --secondary: #2D2A24;
+  --secondary-light: #443F36;
+  --navy-dark: #1C1A16;
+  
+  /* Action / CTA Accent (Vibrant Practice signature #F5D76E) */
+  --action: #F5D76E;
+  --action-hover: #E8C84E;
+  --action-ink: #2D2A24;
+  
+  /* Clinical Dental Accents */
+  --primary: #0D9488;
+  --primary-hover: #0F766E;
+  --primary-light: #F0FDFA;
+  --primary-subtle: #CCFBF1;
+  --primary-dark: #115E59;
+  
+  /* Feature Gradient System */
+  --feature-start: #2563EB;
+  --feature-end: #60A5FA;
+  --accent: #F59E0B;
+  --accent-hover: #D97706;
+  --accent-light: #FEF3C7;
+  
+  /* Hairline Borders & Dividers */
+  --border: #E5E0D6;
+  --border-light: #EFECE5;
+  --border-color: #E5E0D6;
+  --border-focus: #0D9488;
   
   --success: #10b981;
   --success-light: #ecfdf5;
@@ -38,16 +56,20 @@
   --danger: #ef4444;
   --danger-light: #fef2f2;
   
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 6px 14px -2px rgba(14, 35, 56, 0.08), 0 3px 6px -2px rgba(14, 35, 56, 0.04);
-  --shadow-lg: 0 14px 28px -4px rgba(14, 35, 56, 0.12), 0 8px 14px -3px rgba(14, 35, 56, 0.06);
-  --shadow-xl: 0 24px 44px -6px rgba(14, 35, 56, 0.16), 0 14px 20px -4px rgba(14, 35, 56, 0.08);
-  --shadow-glow: 0 0 25px rgba(0, 157, 148, 0.28);
+  --shadow-sm: 0 2px 6px rgba(61, 58, 52, 0.04);
+  --shadow-md: 0 8px 20px rgba(61, 58, 52, 0.06), 0 2px 6px rgba(61, 58, 52, 0.03);
+  --shadow-lg: 0 16px 36px rgba(61, 58, 52, 0.08), 0 6px 14px rgba(61, 58, 52, 0.04);
+  --shadow-xl: 0 24px 50px rgba(61, 58, 52, 0.12);
+  --shadow-glow: 0 0 25px rgba(245, 215, 110, 0.35);
   
   --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
   --radius-full: 9999px;
+  
+  --font-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+  --font-display: 'Newsreader', 'Outfit', serif;
   
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -61,7 +83,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-sans);
   color: var(--text-main);
   background-color: var(--bg-page);
   -webkit-font-smoothing: antialiased;
@@ -80,8 +102,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Outfit', 'Inter', sans-serif;
-  color: var(--secondary);
+  font-family: var(--font-display); color: var(--ink-deep);
   font-weight: 700;
   line-height: 1.25;
 }
@@ -144,27 +165,31 @@ button, input, select, textarea {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  color: #fff;
-  box-shadow: 0 4px 14px rgba(0, 157, 148, 0.35);
+  background: var(--action);
+  color: var(--action-ink);
+  font-weight: 600;
+  border: 1px solid rgba(61, 58, 52, 0.15);
+  box-shadow: 0 4px 14px rgba(245, 215, 110, 0.3);
 }
 .btn-primary:hover {
-  background: linear-gradient(135deg, var(--primary-hover), var(--primary));
+  background: var(--action-hover);
+  color: var(--action-ink);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 157, 148, 0.45);
-  color: #fff;
+  box-shadow: 0 8px 24px rgba(245, 215, 110, 0.45);
 }
 
 .btn-accent {
-  background: linear-gradient(135deg, var(--accent), #e0551c);
-  color: #fff;
-  box-shadow: 0 4px 14px rgba(242, 116, 58, 0.35);
+  background: var(--action);
+  color: var(--action-ink);
+  font-weight: 700;
+  border: 1px solid rgba(61, 58, 52, 0.15);
+  box-shadow: 0 4px 14px rgba(245, 215, 110, 0.3);
 }
 .btn-accent:hover {
-  background: linear-gradient(135deg, #e0551c, var(--accent));
+  background: var(--action-hover);
+  color: var(--action-ink);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(242, 116, 58, 0.45);
-  color: #fff;
+  box-shadow: 0 8px 24px rgba(245, 215, 110, 0.45);
 }
 
 .btn-outline {
@@ -560,7 +585,7 @@ button, input, select, textarea {
 /* ---------------- HERO SECTION ---------------- */
 .hero {
   position: relative;
-  background: linear-gradient(135deg, #f0fbfb 0%, #ffffff 50%, #fdf8f5 100%);
+  background: linear-gradient(135deg, #FAF8F5 0%, #FFFFFF 50%, #F5EFEB 100%);
   padding: 4.5rem 0 5.5rem;
   overflow: hidden;
 }
@@ -1353,7 +1378,7 @@ button, input, select, textarea {
 
 /* ---------------- APPOINTMENT BOOKING SECTION (UI-1, UX-1, UX-3, UX-10) ---------------- */
 .booking-section {
-  background: linear-gradient(135deg, #f0fbfb 0%, #ffffff 50%, #fdf8f5 100%);
+  background: linear-gradient(135deg, #FAF8F5 0%, #FFFFFF 50%, #F5EFEB 100%);
   position: relative;
 }
 
@@ -2855,8 +2880,9 @@ textarea.form-control {
   animation-play-state: paused !important;
 }
 
+/* User requirement: NEVER pause on hover! Runs continuously non-stop */
 .gallery-marquee-container:hover .gallery-marquee-track {
-  animation-play-state: paused;
+  animation-play-state: running !important;
 }
 
 /* Keyframe: Moving continuously from Left to Right */
@@ -2870,8 +2896,8 @@ textarea.form-control {
 }
 
 .gallery-card {
-  flex: 0 0 clamp(320px, 28vw, 390px);
-  width: clamp(320px, 28vw, 390px);
+  flex: 0 0 clamp(360px, 32vw, 460px);
+  width: clamp(360px, 32vw, 460px);
   background: #ffffff;
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -2893,7 +2919,7 @@ textarea.form-control {
 .gallery-card-img-wrapper {
   position: relative;
   width: 100%;
-  height: clamp(300px, 26vw, 380px);
+  height: clamp(340px, 30vw, 420px);
   overflow: hidden;
   background: #e2e8f0;
 }
@@ -3117,4 +3143,30 @@ textarea.form-control {
 .lightbox-close-btn:hover {
   background: var(--accent);
   transform: rotate(90deg);
+}
+
+/* Editorial Marquee Pill from Vibrant Practice DESIGN.md */
+.marquee-editorial-pill {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.4rem 2.6rem;
+  background: var(--canvas);
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius-full);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.35rem, 2vw, 1.9rem);
+  font-weight: 500;
+  color: var(--ink-deep);
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+  box-shadow: 0 4px 14px rgba(61, 58, 52, 0.04);
+}
+
+.italic-serif {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
 }
