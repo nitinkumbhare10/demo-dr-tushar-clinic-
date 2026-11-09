@@ -850,7 +850,6 @@ window.downloadClinicVCard = function() {
     'ORG:Dr Tushar Chandak Family Dental Care',
     'TITLE:Dental Surgeon & Implantologist',
     'TEL;TYPE=CELL,VOICE:+919309592373',
-    'TEL;TYPE=WORK,VOICE:+919309592373',
     'EMAIL;TYPE=PREF,INTERNET:drtusharchandak@gmail.com',
     'ADR;TYPE=WORK:;;Ground floor primices, shri Ayurvedic College, DENTAL UNIT Dant-vibhag, Krida Chowk, Hanuman Nagar;Nagpur;Maharashtra;440024;India',
     'URL:https://maps.google.com/?cid=291838327018789849',
