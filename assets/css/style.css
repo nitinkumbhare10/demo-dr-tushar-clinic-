@@ -4778,6 +4778,17 @@ nav[aria-label="Main Navigation"] {
   color: #7C3AED !important;
 }
 
+.slot-text-wrap {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 0.15rem !important;
+}
+
+.slot-check-indicator {
+  display: none !important;
+}
+
 .slot-name {
   font-family: 'Plus Jakarta Sans', sans-serif !important;
   font-size: 0.88rem !important;
@@ -5671,23 +5682,48 @@ h1, h2, h3, .section-title, .brand-title, .hero-title, .footer-brand-title {
     display: none !important;
   }
   .booking-wrapper {
+    display: block !important;
     border-radius: 18px !important;
     margin: 0 auto !important;
     width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
     box-shadow: 0 4px 20px rgba(45, 42, 36, 0.06) !important;
   }
   .booking-form-pane {
-    padding: 1.25rem 1rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    padding: 1.25rem 0.85rem !important;
+    overflow: hidden !important;
   }
   .form-header-badge {
     margin-bottom: 1.25rem !important;
     padding-bottom: 0.85rem !important;
   }
   .form-grid {
-    grid-template-columns: 1fr !important;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
     gap: 0.85rem !important;
   }
+  .form-group {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
   .form-group.full-width {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
     grid-column: span 1 !important;
   }
   .form-label {
@@ -5710,33 +5746,90 @@ h1, h2, h3, .section-title, .brand-title, .hero-title, .footer-brand-title {
     min-height: 75px !important;
     padding-top: 0.65rem !important;
   }
-  /* Ultra-sleek 3-column segmented time slot row on mobile */
+  /* Ultra-sleek mobile time slot cards (100% responsive, full touch target, zero horizontal cut-off) */
   .fancy-slots-grid {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 0.45rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.55rem !important;
+    width: 100% !important;
+  }
+  .slot-pill-card {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
   }
   .slot-label-box {
-    flex-direction: column !important;
+    display: flex !important;
+    flex-direction: row !important;
     align-items: center !important;
-    justify-content: center !important;
-    padding: 0.55rem 0.25rem !important;
-    gap: 0.15rem !important;
-    text-align: center !important;
-    border-radius: 12px !important;
+    justify-content: flex-start !important;
+    padding: 0.75rem 1rem !important;
+    gap: 0.85rem !important;
+    border-radius: 14px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    text-align: left !important;
+    background: #FAF8F5 !important;
+    border: 1.5px solid #E5E0D6 !important;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
   }
   .slot-icon-circle {
-    width: 28px !important;
-    height: 28px !important;
-    font-size: 0.82rem !important;
-    margin-bottom: 0.2rem !important;
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 1rem !important;
+    margin-bottom: 0 !important;
+    flex-shrink: 0 !important;
+  }
+  .slot-text-wrap {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.15rem !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+    text-align: left !important;
   }
   .slot-name {
-    font-size: 0.78rem !important;
+    font-size: 0.92rem !important;
     font-weight: 700 !important;
+    color: #2D2A24 !important;
+    line-height: 1.25 !important;
   }
   .slot-hours {
-    font-size: 0.65rem !important;
+    font-size: 0.76rem !important;
+    color: #6B6558 !important;
+    line-height: 1.2 !important;
+  }
+  .slot-check-indicator {
+    width: 22px !important;
+    height: 22px !important;
+    border-radius: 50% !important;
+    border: 1.5px solid #D1D5DB !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 0.68rem !important;
+    margin-left: auto !important;
+    color: transparent !important;
+    flex-shrink: 0 !important;
+    transition: all 0.2s ease !important;
+    background: #FFFFFF !important;
+  }
+  .slot-radio:checked + .slot-label-box {
+    background: linear-gradient(135deg, #0D9488 0%, #0F766E 100%) !important;
+    border-color: #0D9488 !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 6px 18px rgba(13, 148, 136, 0.3) !important;
+    transform: none !important;
+  }
+  .slot-radio:checked + .slot-label-box .slot-name,
+  .slot-radio:checked + .slot-label-box .slot-hours {
+    color: #FFFFFF !important;
+  }
+  .slot-radio:checked + .slot-label-box .slot-check-indicator {
+    background: #FFFFFF !important;
+    border-color: #FFFFFF !important;
+    color: #0D9488 !important;
   }
   .fancy-checkbox-wrap {
     font-size: 0.78rem !important;
