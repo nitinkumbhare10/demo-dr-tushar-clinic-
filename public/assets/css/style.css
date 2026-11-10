@@ -2789,12 +2789,47 @@ textarea.form-control {
     justify-content: center;
   }
   .hero-stats {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem 0.5rem;
-    width: 100%;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.35rem !important;
+    width: 100% !important;
+    padding-top: 1.25rem !important;
+    text-align: center !important;
+  }
+  .stat-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    position: relative !important;
+    padding: 0 0.2rem !important;
+  }
+  .stat-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 15%;
+    height: 70%;
+    width: 1px;
+    background: #E5E0D6;
   }
   .stat-item h3 {
-    font-size: 1.65rem;
+    font-family: var(--font-serif, 'Newsreader', Georgia, serif) !important;
+    font-size: clamp(1.15rem, 4.4vw, 1.55rem) !important;
+    color: #0D9488 !important;
+    margin-bottom: 0.2rem !important;
+    line-height: 1.15 !important;
+    white-space: nowrap !important;
+    font-weight: 700 !important;
+  }
+  .stat-item p {
+    font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif) !important;
+    font-size: clamp(0.68rem, 2.3vw, 0.78rem) !important;
+    color: #5A554A !important;
+    line-height: 1.25 !important;
+    margin: 0 !important;
+    text-align: center !important;
   }
   
   /* Keep floating badges inside image boundaries (prevents horizontal overflow) */
