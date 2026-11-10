@@ -27,7 +27,8 @@ function initAOS() {
       easing: 'ease-out-cubic',
       once: true,
       offset: 50,
-      delay: 40
+      delay: 40,
+      disable: window.innerWidth < 768
     });
   }
 }
