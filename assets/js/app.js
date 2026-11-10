@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initServiceFilters();
   initBookingSystem();
+  initFancyTreatmentSelector();
   initDraftAutoSave();
   initAdminDashboard();
   initBackToTop();
@@ -341,6 +342,7 @@ window.selectServiceAndBook = function(serviceName) {
   const serviceSelect = document.getElementById('bookingService');
   if (serviceSelect) {
     serviceSelect.value = serviceName;
+    serviceSelect.dispatchEvent(new Event('change', { bubbles: true }));
     serviceSelect.classList.add('field-flash');
     setTimeout(() => {
       serviceSelect.classList.remove('field-flash');
@@ -524,6 +526,194 @@ function initBookingSystem() {
 
       showToast('Appointment successfully scheduled!', 'success');
     });
+  }
+}
+
+/* ---------------- FANCY LUXURY TREATMENT SELECTOR ---------------- */
+function initFancyTreatmentSelector() {
+  const container = document.getElementById('customTreatmentSelect');
+  if (!container) return;
+
+  const select = document.getElementById('bookingService');
+  const trigger = document.getElementById('treatmentTrigger');
+  const dropdown = document.getElementById('treatmentDropdown');
+  const triggerTitle = document.getElementById('triggerTitle');
+  const triggerSubtitle = document.getElementById('triggerSubtitle');
+  const triggerIcon = document.getElementById('triggerIcon');
+  const triggerClearBtn = document.getElementById('triggerClearBtn');
+  const searchInput = document.getElementById('treatmentSearch');
+  const optionsList = document.getElementById('treatmentOptionsList');
+  const noResults = document.getElementById('treatmentNoResults');
+  const searchQuerySpan = document.getElementById('treatmentSearchQuery');
+  const quickChips = document.querySelectorAll('.treatment-quick-chips .quick-chip');
+  const cards = Array.from(optionsList ? optionsList.querySelectorAll('.treatment-option-card') : []);
+
+  function updateSelection(val, isUserInput = true) {
+    if (select && isUserInput) {
+      select.value = val;
+      select.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+
+    const matchedCard = cards.find(c => c.getAttribute('data-val') === val);
+
+    cards.forEach(c => {
+      if (c === matchedCard && val) {
+        c.classList.add('selected');
+        c.setAttribute('aria-selected', 'true');
+      } else {
+        c.classList.remove('selected');
+        c.removeAttribute('aria-selected');
+      }
+    });
+
+    quickChips.forEach(chip => {
+      if (chip.getAttribute('data-val') === val && val) {
+        chip.classList.add('active');
+      } else {
+        chip.classList.remove('active');
+      }
+    });
+
+    if (matchedCard && val) {
+      const title = matchedCard.querySelector('.opt-title').textContent.trim();
+      const desc = matchedCard.querySelector('.opt-desc').textContent.trim();
+      const iconClass = matchedCard.getAttribute('data-icon') || 'fa-tooth';
+
+      triggerTitle.textContent = title;
+      triggerTitle.classList.remove('is-empty');
+      triggerSubtitle.textContent = desc;
+      triggerSubtitle.style.display = 'block';
+      triggerIcon.className = `fas ${iconClass}`;
+      if (triggerClearBtn) triggerClearBtn.style.display = 'flex';
+    } else {
+      triggerTitle.textContent = 'Choose Dental Treatment...';
+      triggerTitle.classList.add('is-empty');
+      triggerSubtitle.textContent = '';
+      triggerSubtitle.style.display = 'none';
+      triggerIcon.className = 'fas fa-tooth';
+      if (triggerClearBtn) triggerClearBtn.style.display = 'none';
+    }
+  }
+
+  function openDropdown() {
+    container.classList.add('open');
+    if (trigger) trigger.setAttribute('aria-expanded', 'true');
+    if (searchInput) {
+      searchInput.value = '';
+      filterOptions('');
+      setTimeout(() => searchInput.focus(), 60);
+    }
+  }
+
+  function closeDropdown() {
+    container.classList.remove('open');
+    if (trigger) trigger.setAttribute('aria-expanded', 'false');
+  }
+
+  if (trigger) {
+    trigger.addEventListener('click', (e) => {
+      if (e.target.closest('#triggerClearBtn')) return;
+      if (container.classList.contains('open')) {
+        closeDropdown();
+      } else {
+        openDropdown();
+      }
+    });
+
+    trigger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        if (container.classList.contains('open')) closeDropdown();
+        else openDropdown();
+      } else if (e.key === 'Escape') {
+        closeDropdown();
+      }
+    });
+  }
+
+  if (triggerClearBtn) {
+    triggerClearBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      updateSelection('', true);
+      closeDropdown();
+    });
+  }
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      const val = card.getAttribute('data-val');
+      updateSelection(val, true);
+      closeDropdown();
+      if (trigger) trigger.focus();
+    });
+  });
+
+  quickChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const val = chip.getAttribute('data-val');
+      if (select && select.value === val) {
+        updateSelection('', true);
+      } else {
+        updateSelection(val, true);
+      }
+    });
+  });
+
+  function filterOptions(query) {
+    const q = query.toLowerCase().trim();
+    let visibleCount = 0;
+    cards.forEach(card => {
+      const title = card.querySelector('.opt-title').textContent.toLowerCase();
+      const desc = card.querySelector('.opt-desc').textContent.toLowerCase();
+      const badge = card.querySelector('.opt-badge') ? card.querySelector('.opt-badge').textContent.toLowerCase() : '';
+      const matches = !q || title.includes(q) || desc.includes(q) || badge.includes(q);
+      card.style.display = matches ? 'flex' : 'none';
+      if (matches) visibleCount++;
+    });
+
+    if (noResults) {
+      if (visibleCount === 0) {
+        noResults.style.display = 'block';
+        if (searchQuerySpan) searchQuerySpan.textContent = query;
+      } else {
+        noResults.style.display = 'none';
+      }
+    }
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      filterOptions(e.target.value);
+    });
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeDropdown();
+        if (trigger) trigger.focus();
+      }
+    });
+  }
+
+  document.addEventListener('click', (e) => {
+    if (!container.contains(e.target) && !e.target.closest('.treatment-quick-chips')) {
+      closeDropdown();
+    }
+  });
+
+  if (select) {
+    select.addEventListener('change', () => {
+      updateSelection(select.value, false);
+    });
+
+    const parentForm = select.closest('form');
+    if (parentForm) {
+      parentForm.addEventListener('reset', () => {
+        setTimeout(() => updateSelection('', false), 20);
+      });
+    }
+
+    if (select.value) {
+      updateSelection(select.value, false);
+    }
   }
 }
 
@@ -755,7 +945,7 @@ function renderAdminAppointments() {
         <td><strong>${item.id}</strong><br><small style="color:#94a3b8">${item.timestamp || ''}</small></td>
         <td>
           <strong>${item.name}</strong><br>
-          <a href="tel:${item.phone}" style="color:var(--primary); font-size:0.8rem; font-weight:600;"><i class="fas fa-phone-alt"></i> ${item.phone}</a>
+          <a href="tel:${item.phone}" style="color:var(--primary); font-size:0.8rem; font-weight:600;"><i class="fas fa-phone"></i> ${item.phone}</a>
         </td>
         <td>${item.service}</td>
         <td>${item.date}<br><small style="color:#64748b">${item.slot}</small></td>

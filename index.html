@@ -1273,32 +1273,273 @@
 <input autocomplete="email" class="form-control fancy-control" id="bookingEmail" placeholder="name@example.com" type="email"/>
 </div>
 </div>
-<!-- Select Dental Treatment -->
+<!-- Select Dental Treatment (Fancy Luxury Selector) -->
 <div class="form-group">
-<label class="form-label" for="bookingService">
+<label class="form-label" for="treatmentTrigger">
 <span>Select Dental Treatment <span class="opt-label">(Optional)</span></span>
 </label>
-<div class="input-icon-wrap">
-<i class="fas fa-tooth input-icon"></i>
-<select class="form-control fancy-control fancy-select" id="bookingService">
-<option value="">-- Choose Dental Treatment --</option>
-<option value="General Consultation &amp; Checkup">General Consultation &amp; Checkup</option>
-<option value="Routine Dental Checkups">Routine Dental Checkup &amp; Consultation</option>
-<option value="Teeth Whitening">Teeth Whitening (Instant Brightness)</option>
-<option value="Root Canal Treatment">Painless Rotary Root Canal (RCT)</option>
-<option value="Dental Implants">Fixed Dental Implants</option>
-<option value="Veneers &amp; Smile Makeover">Aesthetic Smile Makeover</option>
-<option value="Crowns &amp; Fixed Bridges">Crowns &amp; Fixed Bridges</option>
-<option value="Orthodontics &amp; Braces">Orthodontic Braces &amp; Invisible Aligners</option>
-<option value="Kids Dentistry">Kids &amp; Pediatric Dentistry</option>
-<option value="Teeth Cleaning &amp; Scaling">Deep Scaling &amp; Ultrasonic Cleaning</option>
-<option value="Dentures &amp; Bridges">Complete &amp; Partial Dentures</option>
-<option value="Oral Surgery">Wisdom Tooth &amp; Minor Oral Surgery</option>
-<option value="Gum Surgery">Periodontics &amp; Bleeding Gum Treatment</option>
-<option value="Fillings &amp; Dental Sealants">Tooth-Coloured Composite Fillings</option>
-<option value="Digital RVG X-Ray">Digital Ultra-Low Radiation X-Ray</option>
-<option value="Emergency Toothache Relief">Emergency Toothache Treatment</option>
-</select>
+
+<!-- Popular Quick-Select Chips -->
+<div class="treatment-quick-chips" aria-label="Popular treatment quick select">
+  <button type="button" class="quick-chip" data-val="Root Canal Treatment">
+    <i class="fas fa-tooth"></i> Root Canal
+  </button>
+  <button type="button" class="quick-chip" data-val="Dental Implants">
+    <i class="fas fa-shield-halved"></i> Implants
+  </button>
+  <button type="button" class="quick-chip" data-val="Teeth Whitening">
+    <i class="fas fa-wand-magic-sparkles"></i> Whitening
+  </button>
+  <button type="button" class="quick-chip" data-val="Orthodontics &amp; Braces">
+    <i class="fas fa-teeth-open"></i> Braces
+  </button>
+  <button type="button" class="quick-chip" data-val="Kids Dentistry">
+    <i class="fas fa-child"></i> Kids Care
+  </button>
+  <button type="button" class="quick-chip" data-val="Emergency Toothache Relief">
+    <i class="fas fa-kit-medical"></i> Emergency
+  </button>
+</div>
+
+<!-- Custom Luxury Dropdown -->
+<div class="custom-treatment-select" id="customTreatmentSelect">
+  <!-- Hidden real select to guarantee form compatibility -->
+  <select class="hidden-real-select" id="bookingService" name="service" tabindex="-1" aria-hidden="true">
+    <option value="">-- Choose Dental Treatment --</option>
+    <option value="General Consultation &amp; Checkup">General Consultation &amp; Checkup</option>
+    <option value="Routine Dental Checkups">Routine Dental Checkup &amp; Consultation</option>
+    <option value="Teeth Whitening">Teeth Whitening (Instant Brightness)</option>
+    <option value="Root Canal Treatment">Painless Rotary Root Canal (RCT)</option>
+    <option value="Dental Implants">Fixed Dental Implants</option>
+    <option value="Veneers &amp; Smile Makeover">Aesthetic Smile Makeover</option>
+    <option value="Crowns &amp; Fixed Bridges">Crowns &amp; Fixed Bridges</option>
+    <option value="Orthodontics &amp; Braces">Orthodontic Braces &amp; Invisible Aligners</option>
+    <option value="Kids Dentistry">Kids &amp; Pediatric Dentistry</option>
+    <option value="Teeth Cleaning &amp; Scaling">Deep Scaling &amp; Ultrasonic Cleaning</option>
+    <option value="Dentures &amp; Bridges">Complete &amp; Partial Dentures</option>
+    <option value="Oral Surgery">Wisdom Tooth &amp; Minor Oral Surgery</option>
+    <option value="Gum Surgery">Periodontics &amp; Bleeding Gum Treatment</option>
+    <option value="Fillings &amp; Dental Sealants">Tooth-Coloured Composite Fillings</option>
+    <option value="Digital RVG X-Ray">Digital Ultra-Low Radiation X-Ray</option>
+    <option value="Emergency Toothache Relief">Emergency Toothache Treatment</option>
+  </select>
+
+  <!-- Interactive Trigger Box -->
+  <div class="treatment-select-trigger" id="treatmentTrigger" tabindex="0" role="combobox" aria-expanded="false" aria-haspopup="listbox">
+    <div class="trigger-icon-badge" id="triggerIconWrap">
+      <i class="fas fa-tooth" id="triggerIcon"></i>
+    </div>
+    <div class="trigger-text-wrap">
+      <span class="trigger-placeholder is-empty" id="triggerTitle">Choose Dental Treatment...</span>
+      <span class="trigger-subtext" id="triggerSubtitle" style="display: none;"></span>
+    </div>
+    <div class="trigger-actions">
+      <button type="button" class="trigger-clear-btn" id="triggerClearBtn" title="Clear selection" style="display: none;">
+        <i class="fas fa-times"></i>
+      </button>
+      <i class="fas fa-chevron-down trigger-arrow" id="triggerArrow"></i>
+    </div>
+  </div>
+
+  <!-- Floating Luxury Dropdown Menu -->
+  <div class="treatment-dropdown-panel" id="treatmentDropdown" role="listbox">
+    <div class="treatment-search-box">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" class="treatment-search-input" id="treatmentSearch" placeholder="Search treatment (e.g. braces, root canal)..." autocomplete="off"/>
+    </div>
+    <div class="treatment-options-list" id="treatmentOptionsList">
+
+      <div class="treatment-option-card" data-val="General Consultation &amp; Checkup" data-icon="fa-stethoscope" data-color="teal" role="option">
+        <div class="opt-icon-circle bg-teal"><i class="fas fa-stethoscope"></i></div>
+        <div class="opt-content">
+          <div class="opt-header-line">
+            <span class="opt-title">General Consultation &amp; Checkup</span>
+            <span class="opt-badge">Comprehensive</span>
+          </div>
+          <span class="opt-desc">Full oral cavity assessment &amp; diagnosis</span>
+        </div>
+        <div class="opt-check"><i class="fas fa-check"></i></div>
+      </div>
+
+      <div class="treatment-option-card" data-val="Routine Dental Checkups" data-icon="fa-clipboard-check" data-color="blue" role="option">
+        <div class="opt-icon-circle bg-blue"><i class="fas fa-clipboard-check"></i></div>
+        <div class="opt-content">
+          <div class="opt-header-line">
+            <span class="opt-title">Routine Dental Checkup</span>
+          </div>
+          <span class="opt-desc">Bi-annual preventive maintenance review</span>
+        </div>
+        <div class="opt-check"><i class="fas fa-check"></i></div>
+      </div>
+
+      <div class="treatment-option-card" data-val="Teeth Whitening" data-icon="fa-wand-magic-sparkles" data-color="amber" role="option">
+        <div class="opt-icon-circle bg-amber"><i class="fas fa-wand-magic-sparkles"></i></div>
+        <div class="opt-content">
+          <div class="opt-header-line">
+            <span class="opt-title">Teeth Whitening</span>
+            <span class="opt-badge">Fast 45-Min</span>
+          </div>
+          <span class="opt-desc">Instant stain removal &amp; bright radiant smile</span>
+        </div>
+        <div class="opt-check"><i class="fas fa-check"></i></div>
+      </div>
+
+      <div class="treatment-option-card" data-val="Root Canal Treatment" data-icon="fa-tooth" data-color="emerald" role="option">
+        <div class="opt-icon-circle bg-emerald"><i class="fas fa-tooth"></i></div>
+        <div class="opt-content">
+          <div class="opt-header-line">
+            <span class="opt-title">Painless Root Canal (RCT)</span>
+            <span class="opt-badge">Pain-Free</span>
+          </div>
+          <span class="opt-desc">Single-sitting rotary endodontics</span>
+        </div>
+        <div class="opt-check"><i class="fas fa-check"></i></div>
+      </div>
+
+      <div class="treatment-option-card" data-val="Dental Implants" data-icon="fa-shield-halved" data-color="indigo" role="option">
+        <div class="opt-icon-circle bg-indigo"><i class="fas fa-shield-halved"></i></div>
+        <div class="opt-content">
+          <div class="opt-header-line">
+            <span class="opt-title">Fixed Dental Implants</span>
+            <span class="opt-badge">Lifetime Warranty</span>
+          </div>
+          <span class="opt-desc">Permanent titanium implant tooth replacement</span>
+        </div>
+        <div class="opt-check"><i class="fas fa-check"></i></div>
+      </div>
+
+      <div class="treatment-option-card" data-val="Veneers &amp; Smile Makeover" data-icon="fa-star" data-color="rose" role="option">
+        <div class="opt-icon-circle bg-rose"><i class="fas fa-star"></i></div>
+        <div class="opt-content">
+          <div class="opt-header-line">
+            <span class="opt-title">Veneers &amp; Smile Makeover</span>
+            <span class="opt-badge">Aesthetic</span>
+          </div>
+          <span class="opt-desc">Ultra-thin ceramic veneers for celebrity smile</span>
+        </div>
+        <div class="opt-check"><i class="fas fa-check"></i></div>
+      </div>
+
+      <div class="treatment-option-card" data-val="Crowns &amp; Fixed Bridges" data-icon="fa-crown" data-color="amber" role="option">
+        <div class="opt-icon-circle bg-amber"><i class="fas fa-crown"></i></div>
+        <div class="opt-content">
+          <div class="opt-header-line">
+            <span class="opt-title">Crowns &amp; Fixed Bridges</span>
+          </div>
+          <span class="opt-desc">High-strength Zirconia caps &amp; ceramic bridges</span>
+        </div>
+        <div class="opt-check"><i class="fas fa-check"></i></div>
+      </div>
+
+      <div class="treatment-option-card" data-val="Orthodontics &amp; Braces" data-icon="fa-teeth-open" data-color="teal" role="option">
+        <div class="opt-icon-circle bg-teal"><i class="fas fa-teeth-open"></i></div>
+        <div class="opt-content">
+          <div class="opt-header-line">
+            <span class="opt-title">Orthodontics &amp; Clear Aligners</span>
+            <span class="opt-badge">Clear</span>
+          </div>
+          <span class="opt-desc">Ceramic braces &amp; invisible transparent aligners</span>
+        </div>
+        <div class="opt-check"><i class="fas fa-check"></i></div>
+      </div>
+
+      <div class="treatment-option-card" data-val="Kids Dentistry" data-icon="fa-child-reaching" data-color="sky" role="option">
+        <div class="opt-icon-circle bg-sky"><i class="fas fa-child-reaching"></i></div>
+        <div class="opt-content">
+          <div class="opt-header-line">
+            <span class="opt-title">Kids &amp; Pediatric Dentistry</span>
+            <span class="opt-badge">Child Friendly</span>
+          </div>
+          <span class="opt-desc">Gentle cavity prevention &amp; friendly care</span>
+        </div>
+        <div class="opt-check"><i class="fas fa-check"></i></div>
+      </div>
+
+      <div class="treatment-option-card" data-val="Teeth Cleaning &amp; Scaling" data-icon="fa-sparkles" data-color="emerald" role="option">
+        <div class="opt-icon-circle bg-emerald"><i class="fas fa-sparkles"></i></div>
+        <div class="opt-content">
+          <div class="opt-header-line">
+            <span class="opt-title">Teeth Cleaning &amp; Scaling</span>
+          </div>
+          <span class="opt-desc">Ultrasonic plaque/tartar removal &amp; polish</span>
+        </div>
+        <div class="opt-check"><i class="fas fa-check"></i></div>
+      </div>
+
+      <div class="treatment-option-card" data-val="Dentures &amp; Bridges" data-icon="fa-teeth" data-color="blue" role="option">
+        <div class="opt-icon-circle bg-blue"><i class="fas fa-teeth"></i></div>
+        <div class="opt-content">
+          <div class="opt-header-line">
+            <span class="opt-title">Complete &amp; Partial Dentures</span>
+          </div>
+          <span class="opt-desc">Comfortable flexible dentures with natural bite</span>
+        </div>
+        <div class="opt-check"><i class="fas fa-check"></i></div>
+      </div>
+
+      <div class="treatment-option-card" data-val="Oral Surgery" data-icon="fa-user-doctor" data-color="indigo" role="option">
+        <div class="opt-icon-circle bg-indigo"><i class="fas fa-user-doctor"></i></div>
+        <div class="opt-content">
+          <div class="opt-header-line">
+            <span class="opt-title">Wisdom Tooth &amp; Oral Surgery</span>
+            <span class="opt-badge">Specialist</span>
+          </div>
+          <span class="opt-desc">Atraumatic impacted tooth removal by MDS</span>
+        </div>
+        <div class="opt-check"><i class="fas fa-check"></i></div>
+      </div>
+
+      <div class="treatment-option-card" data-val="Gum Surgery" data-icon="fa-heart-pulse" data-color="rose" role="option">
+        <div class="opt-icon-circle bg-rose"><i class="fas fa-heart-pulse"></i></div>
+        <div class="opt-content">
+          <div class="opt-header-line">
+            <span class="opt-title">Gum Surgery &amp; Periodontics</span>
+          </div>
+          <span class="opt-desc">Bleeding gums, deep pocket &amp; laser care</span>
+        </div>
+        <div class="opt-check"><i class="fas fa-check"></i></div>
+      </div>
+
+      <div class="treatment-option-card" data-val="Fillings &amp; Dental Sealants" data-icon="fa-cubes" data-color="amber" role="option">
+        <div class="opt-icon-circle bg-amber"><i class="fas fa-cubes"></i></div>
+        <div class="opt-content">
+          <div class="opt-header-line">
+            <span class="opt-title">Tooth-Coloured Fillings</span>
+          </div>
+          <span class="opt-desc">Natural aesthetic composite cavity restorations</span>
+        </div>
+        <div class="opt-check"><i class="fas fa-check"></i></div>
+      </div>
+
+      <div class="treatment-option-card" data-val="Digital RVG X-Ray" data-icon="fa-x-ray" data-color="teal" role="option">
+        <div class="opt-icon-circle bg-teal"><i class="fas fa-x-ray"></i></div>
+        <div class="opt-content">
+          <div class="opt-header-line">
+            <span class="opt-title">Digital RVG X-Ray</span>
+            <span class="opt-badge">Low-Radiation</span>
+          </div>
+          <span class="opt-desc">Instant high-definition diagnostic imaging</span>
+        </div>
+        <div class="opt-check"><i class="fas fa-check"></i></div>
+      </div>
+
+      <div class="treatment-option-card" data-val="Emergency Toothache Relief" data-icon="fa-kit-medical" data-color="rose" role="option">
+        <div class="opt-icon-circle bg-rose"><i class="fas fa-kit-medical"></i></div>
+        <div class="opt-content">
+          <div class="opt-header-line">
+            <span class="opt-title">Emergency Toothache Relief</span>
+            <span class="opt-badge" style="background:#FEE2E2; color:#DC2626;">Immediate</span>
+          </div>
+          <span class="opt-desc">Priority same-day acute pain relief</span>
+        </div>
+        <div class="opt-check"><i class="fas fa-check"></i></div>
+      </div>
+
+    </div>
+    <div class="treatment-no-results" id="treatmentNoResults" style="display: none;">
+      <i class="fas fa-search" style="margin-right: 0.35rem; color: #8C8679;"></i> No treatment matching "<span id="treatmentSearchQuery"></span>"
+    </div>
+  </div>
 </div>
 </div>
 <!-- Preferred Date -->
