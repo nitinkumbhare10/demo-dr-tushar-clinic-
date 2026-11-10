@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initAOS();
   initLiveClinicHours();
   initHighlightTodayTimings();
-  initThemeToggle();
   initMobileMenu();
   initServiceFilters();
   initBookingSystem();
@@ -285,52 +284,11 @@ function initMobileMenu() {
   });
 }
 
-/* ---------------- THEME TOGGLE SYSTEM (LIGHT / DARK) ---------------- */
-function initThemeToggle() {
-  const toggleBtns = document.querySelectorAll('.theme-toggle-btn');
-  
-  function updateThemeUI(isDark) {
-    toggleBtns.forEach(btn => {
-      const icon = btn.querySelector('i');
-      if (icon) {
-        icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
-      }
-      btn.setAttribute('aria-label', isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode');
-      btn.setAttribute('title', isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode');
-    });
-  }
-
-  const isCurrentlyDark = document.documentElement.classList.contains('dark');
-  updateThemeUI(isCurrentlyDark);
-
-  toggleBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      const isDark = document.documentElement.classList.toggle('dark');
-      try {
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      } catch (err) {}
-      updateThemeUI(isDark);
-      if (typeof showToast === 'function') {
-        showToast(isDark ? 'Dark Mode Activated' : 'Light Mode Activated', 'info');
-      }
-    });
-  });
-
-  if (window.matchMedia) {
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-      if (!localStorage.getItem('theme')) {
-        if (e.matches) {
-          document.documentElement.classList.add('dark');
-        } else {
-          document.documentElement.classList.remove('dark');
-        }
-        updateThemeUI(e.matches);
-      }
-    });
-  }
-}
+/* ---------------- LIGHT THEME ENFORCEMENT ---------------- */
+try {
+  localStorage.removeItem('theme');
+  document.documentElement.classList.remove('dark');
+} catch (e) {}
 
 /* ---------------- 7. SERVICE FILTERS & DYNAMIC COUNTS (UX-15) ---------------- */
 function initServiceFilters() {

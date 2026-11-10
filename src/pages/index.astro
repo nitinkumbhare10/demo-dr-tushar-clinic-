@@ -20,19 +20,12 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <!-- Google Fonts (Unified 2 Primary Families: Newsreader & Plus Jakarta Sans) -->
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600;1,6..72,700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<!-- Dark Mode Flash Prevention -->
+<!-- Default Light Theme Enforcement -->
 <script is:inline>
-  (function() {
-    try {
-      const stored = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (stored === 'dark' || (!stored && prefersDark)) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    } catch (e) {}
-  })();
+  try {
+    localStorage.removeItem('theme');
+    document.documentElement.classList.remove('dark');
+  } catch (e) {}
 </script>
 <!-- Font Awesome 6 Icons -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
@@ -90,10 +83,6 @@
 </nav>
 <!-- Nav CTA (Single Clean Primary Button) -->
 <div class="nav-actions">
-<!-- Dark / Light Mode Toggle Button -->
-<button aria-label="Toggle Dark Mode" class="theme-toggle-btn" id="themeToggleBtn" title="Toggle Dark / Light Mode" type="button">
-<i class="fas fa-moon"></i>
-</button>
 <a class="btn btn-primary nav-cta-btn" href="#appointment">
 <i class="fas fa-calendar-check"></i> <span>Book Appointment</span>
 </a>
@@ -117,9 +106,6 @@
       </div>
     </div>
     <div class="mobile-drawer-actions">
-      <button aria-label="Toggle Dark Mode" class="theme-toggle-btn drawer-theme-btn" title="Toggle Theme" type="button">
-        <i class="fas fa-moon"></i>
-      </button>
       <button aria-label="Close Menu" class="mobile-drawer-close" id="mobileDrawerClose" type="button">
         <i class="fas fa-times"></i>
       </button>
@@ -1208,12 +1194,9 @@
 <!-- APPOINTMENT BOOKING SECTION (UI-1, UX-1, UX-3, UX-10) -->
 <section class="section-padding booking-section" id="appointment">
 <div class="container">
-<div class="section-head" data-aos="fade-up">
+<div class="section-head" data-aos="fade-up" style="margin-bottom: 2rem;">
 <span class="section-subtitle"><i class="fas fa-calendar-check"></i> Instant Reservation</span>
 <h2 class="section-title">Book Appointment At Our Clinic</h2>
-<p class="section-desc">
-          Your oral comfort is our priority. Fill out the automated form below to reserve your priority slot with Dr. Tushar Chandak.
-        </p>
 </div>
 <div class="booking-wrapper" data-aos="fade-up" data-aos-duration="850">
 <!-- Left Luxury Info Pane -->
@@ -1224,9 +1207,6 @@
 <span>Priority Doctor Reservation</span>
 </div>
 <h3 class="booking-pane-title">Schedule Your Visit</h3>
-<p class="booking-pane-desc">
-              Experience seamless, zero-wait dental consultations. Reserve your preferred slot online with <strong>Dr. Tushar Chandak</strong> for gentle, comprehensive care.
-            </p>
 <div class="fancy-booking-steps">
 <div class="fancy-step-item">
 <div class="fancy-step-num">1</div>
