@@ -4829,17 +4829,21 @@ nav[aria-label="Main Navigation"] {
 /* Fancy WhatsApp Checkbox Wrap */
 .fancy-checkbox-wrap {
   display: flex !important;
-  align-items: flex-start !important;
+  align-items: center !important;
   gap: 0.85rem !important;
   cursor: pointer !important;
   background: rgba(13, 148, 136, 0.05) !important;
-  border: 1px solid rgba(13, 148, 136, 0.2) !important;
+  border: 1.5px solid rgba(13, 148, 136, 0.22) !important;
   border-radius: 14px !important;
-  padding: 0.95rem 1.15rem !important;
+  padding: 0.85rem 1.1rem !important;
   transition: all 0.25s ease !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  user-select: none !important;
 }
 .fancy-checkbox-wrap:hover {
-  background: rgba(13, 148, 136, 0.08) !important;
+  background: rgba(13, 148, 136, 0.09) !important;
+  border-color: rgba(13, 148, 136, 0.35) !important;
 }
 
 .fancy-checkbox-wrap input {
@@ -4847,8 +4851,8 @@ nav[aria-label="Main Navigation"] {
 }
 
 .custom-check-box {
-  width: 20px !important;
-  height: 20px !important;
+  width: 22px !important;
+  height: 22px !important;
   border-radius: 6px !important;
   border: 1.5px solid #0D9488 !important;
   background: #FFFFFF !important;
@@ -4858,54 +4862,155 @@ nav[aria-label="Main Navigation"] {
   color: transparent !important;
   font-size: 0.72rem !important;
   flex-shrink: 0 !important;
-  margin-top: 2px !important;
   transition: all 0.2s ease !important;
 }
 
 .fancy-checkbox-wrap input:checked + .custom-check-box {
   background: #0D9488 !important;
   color: #FFFFFF !important;
+  border-color: #0D9488 !important;
+  box-shadow: 0 2px 6px rgba(13, 148, 136, 0.3) !important;
 }
 
 .check-text {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.15rem !important;
+  flex: 1 !important;
+  min-width: 0 !important;
+  text-align: left !important;
+}
+
+.check-title {
   font-family: 'Plus Jakarta Sans', sans-serif !important;
-  font-size: 0.86rem !important;
-  color: #3D3A34 !important;
-  line-height: 1.45 !important;
+  font-size: 0.88rem !important;
+  font-weight: 700 !important;
+  color: #0F766E !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.4rem !important;
+  line-height: 1.25 !important;
+}
+
+.check-title i {
+  font-size: 0.98rem !important;
+  color: #10B981 !important;
+}
+
+.check-subtitle {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.76rem !important;
+  color: #57534E !important;
+  line-height: 1.25 !important;
 }
 
 /* Fancy Submit Button */
 .fancy-submit-btn {
   width: 100% !important;
-  height: 56px !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  height: 52px !important;
   background: linear-gradient(135deg, #F5D76E 0%, #E8C84E 100%) !important;
   color: #2D2A24 !important;
   font-family: 'Plus Jakarta Sans', sans-serif !important;
-  font-size: 1.05rem !important;
+  font-size: 1rem !important;
   font-weight: 700 !important;
-  border-radius: 9999px !important;
+  border-radius: 14px !important;
   border: 1px solid rgba(61, 58, 52, 0.15) !important;
-  box-shadow: 0 8px 24px rgba(245, 215, 110, 0.45) !important;
+  box-shadow: 0 8px 22px rgba(245, 215, 110, 0.45) !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 0.75rem !important;
+  gap: 0.65rem !important;
   cursor: pointer !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
   position: relative !important;
   overflow: hidden !important;
+  text-decoration: none !important;
 }
 
 .fancy-submit-btn:hover {
   transform: translateY(-2px) !important;
-  box-shadow: 0 12px 30px rgba(245, 215, 110, 0.55) !important;
+  box-shadow: 0 12px 28px rgba(245, 215, 110, 0.55) !important;
+}
+
+.fancy-submit-btn:active {
+  transform: translateY(0) !important;
 }
 
 .fancy-submit-btn .btn-arrow {
   transition: transform 0.25s ease !important;
 }
 .fancy-submit-btn:hover .btn-arrow {
-  transform: translateX(5px) !important;
+  transform: translateX(4px) !important;
+}
+
+.booking-divider-line {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+  margin: 0.4rem 0 !important;
+  width: 100% !important;
+  text-align: center !important;
+}
+
+.booking-divider-line::before,
+.booking-divider-line::after {
+  content: "" !important;
+  flex: 1 !important;
+  border-bottom: 1px solid #E5E0D6 !important;
+}
+
+.booking-divider-line span {
+  padding: 0 0.75rem !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  color: #8C8679 !important;
+  background: transparent !important;
+}
+
+.booking-alt-wa {
+  margin-top: 0.35rem !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.45rem !important;
+}
+
+.booking-alt-wa-btn {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  height: 48px !important;
+  padding: 0 1.25rem !important;
+  border-radius: 14px !important;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%) !important;
+  color: #FFFFFF !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.94rem !important;
+  font-weight: 700 !important;
+  border: none !important;
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.25) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.55rem !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  transition: all 0.25s ease !important;
+}
+
+.booking-alt-wa-btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 24px rgba(37, 211, 102, 0.4) !important;
+  color: #FFFFFF !important;
+}
+
+.booking-alt-wa-btn:active {
+  transform: translateY(0) !important;
 }
 
 /* ==========================================================================
@@ -5831,35 +5936,46 @@ h1, h2, h3, .section-title, .brand-title, .hero-title, .footer-brand-title {
     border-color: #FFFFFF !important;
     color: #0D9488 !important;
   }
+  .booking-form-footer {
+    margin-top: 1rem !important;
+    gap: 0.65rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
   .fancy-checkbox-wrap {
-    font-size: 0.78rem !important;
-    line-height: 1.35 !important;
+    padding: 0.75rem 0.85rem !important;
+    border-radius: 12px !important;
+    gap: 0.65rem !important;
+  }
+  .check-title {
+    font-size: 0.82rem !important;
+  }
+  .check-subtitle {
+    font-size: 0.72rem !important;
   }
   .fancy-submit-btn {
     width: 100% !important;
-    padding: 0.85rem 1rem !important;
-    font-size: 0.92rem !important;
+    height: 50px !important;
+    padding: 0 1rem !important;
+    font-size: 0.95rem !important;
     border-radius: 12px !important;
+    box-sizing: border-box !important;
+  }
+  .booking-divider-line {
+    margin: 0.25rem 0 !important;
   }
   .booking-alt-wa {
-    margin-top: 0.85rem !important;
-    text-align: center !important;
-  }
-  .booking-alt-text {
-    font-size: 0.78rem !important;
-    color: #78716C !important;
-    display: block !important;
-    margin-bottom: 0.4rem !important;
+    margin-top: 0 !important;
+    gap: 0.35rem !important;
+    width: 100% !important;
   }
   .booking-alt-wa-btn {
     width: 100% !important;
-    padding: 0.65rem 1rem !important;
-    font-size: 0.85rem !important;
+    height: 46px !important;
+    padding: 0 1rem !important;
+    font-size: 0.88rem !important;
     border-radius: 12px !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 0.45rem !important;
+    box-sizing: border-box !important;
   }
 }
 
