@@ -755,7 +755,7 @@ function renderAdminAppointments() {
         <td><strong>${item.id}</strong><br><small style="color:#94a3b8">${item.timestamp || ''}</small></td>
         <td>
           <strong>${item.name}</strong><br>
-          <a href="tel:${item.phone}" style="color:var(--primary); font-size:0.8rem; font-weight:600;"><i class="fas fa-phone-alt"></i> ${item.phone}</a>
+          <a href="tel:${item.phone}" style="color:var(--primary); font-size:0.8rem; font-weight:600;"><i class="fas fa-phone"></i> ${item.phone}</a>
         </td>
         <td>${item.service}</td>
         <td>${item.date}<br><small style="color:#64748b">${item.slot}</small></td>
