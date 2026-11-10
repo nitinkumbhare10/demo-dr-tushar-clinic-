@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initAOS();
   initLiveClinicHours();
   initHighlightTodayTimings();
+  initThemeToggle();
   initMobileMenu();
   initServiceFilters();
   initBookingSystem();
@@ -217,33 +218,115 @@ function initHighlightTodayTimings() {
 /* ---------------- 6. MOBILE MENU & OUTSIDE CLICK AUTO-COLLAPSE (UX-6) ---------------- */
 function initMobileMenu() {
   const toggleBtn = document.getElementById('navToggle');
-  const navMenu = document.getElementById('navMenu');
-  const navLinks = document.querySelectorAll('.nav-link');
+  const drawer = document.getElementById('mobileNavDrawer');
+  const backdrop = document.getElementById('mobileDrawerBackdrop');
+  const closeBtn = document.getElementById('mobileDrawerClose');
+  const drawerLinks = document.querySelectorAll('.mobile-drawer-link, .mobile-drawer-cta, .mobile-drawer-wa');
+  const legacyNavMenu = document.getElementById('navMenu');
 
-  if (toggleBtn && navMenu) {
+  function openDrawer() {
+    if (drawer) {
+      drawer.classList.add('active');
+      drawer.setAttribute('aria-hidden', 'false');
+    }
+    if (backdrop) backdrop.classList.add('active');
+    if (toggleBtn) {
+      toggleBtn.classList.add('active');
+      toggleBtn.setAttribute('aria-expanded', 'true');
+    }
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDrawer() {
+    if (drawer) {
+      drawer.classList.remove('active');
+      drawer.setAttribute('aria-hidden', 'true');
+    }
+    if (backdrop) backdrop.classList.remove('active');
+    if (toggleBtn) {
+      toggleBtn.classList.remove('active');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+    }
+    if (legacyNavMenu) legacyNavMenu.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  if (toggleBtn) {
     toggleBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      const isActive = navMenu.classList.toggle('active');
-      const icon = toggleBtn.querySelector('i');
-      if (icon) {
-        icon.className = isActive ? 'fas fa-times' : 'fas fa-bars';
+      const isOpen = drawer && drawer.classList.contains('active');
+      if (isOpen) {
+        closeDrawer();
+      } else {
+        openDrawer();
       }
     });
+  }
 
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        const icon = toggleBtn.querySelector('i');
-        if (icon) icon.className = 'fas fa-bars';
-      });
+  if (closeBtn) {
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeDrawer();
     });
+  }
 
-    // Close on clicking outside menu
-    document.addEventListener('click', (e) => {
-      if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
-        navMenu.classList.remove('active');
-        const icon = toggleBtn.querySelector('i');
-        if (icon) icon.className = 'fas fa-bars';
+  if (backdrop) {
+    backdrop.addEventListener('click', closeDrawer);
+  }
+
+  drawerLinks.forEach(link => {
+    link.addEventListener('click', closeDrawer);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer && drawer.classList.contains('active')) {
+      closeDrawer();
+    }
+  });
+}
+
+/* ---------------- THEME TOGGLE SYSTEM (LIGHT / DARK) ---------------- */
+function initThemeToggle() {
+  const toggleBtns = document.querySelectorAll('.theme-toggle-btn');
+  
+  function updateThemeUI(isDark) {
+    toggleBtns.forEach(btn => {
+      const icon = btn.querySelector('i');
+      if (icon) {
+        icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+      }
+      btn.setAttribute('aria-label', isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode');
+      btn.setAttribute('title', isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode');
+    });
+  }
+
+  const isCurrentlyDark = document.documentElement.classList.contains('dark');
+  updateThemeUI(isCurrentlyDark);
+
+  toggleBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const isDark = document.documentElement.classList.toggle('dark');
+      try {
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      } catch (err) {}
+      updateThemeUI(isDark);
+      if (typeof showToast === 'function') {
+        showToast(isDark ? 'Dark Mode Activated' : 'Light Mode Activated', 'info');
+      }
+    });
+  });
+
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      if (!localStorage.getItem('theme')) {
+        if (e.matches) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+        updateThemeUI(e.matches);
       }
     });
   }
